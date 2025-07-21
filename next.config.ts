@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '*.vercel.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'iapindia.org',
+      },
     ],
     formats: ['image/webp', 'image/avif'],
   },
@@ -21,6 +25,15 @@ const nextConfig: NextConfig = {
   // Performance optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
+  // Webpack configuration for markdown files
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: 'raw-loader',
+    });
+    return config;
   },
   
   // Security headers
@@ -48,7 +61,28 @@ const nextConfig: NextConfig = {
         ]
       }
     ]
-  }
+  },
+  
+  // Rewrites for SEO-friendly URLs
+  async rewrites() {
+    return [
+      {
+        source: '/articles/:slug',
+        destination: '/health-articles/:slug',
+      },
+    ];
+  },
+  
+  // Redirects for old URLs
+  async redirects() {
+    return [
+      {
+        source: '/blog/:slug',
+        destination: '/health-articles/:slug',
+        permanent: true,
+      },
+    ];
+  },
 }
 
 export default nextConfig

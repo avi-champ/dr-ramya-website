@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 
@@ -32,11 +32,15 @@ export const metadata: Metadata = {
     title: 'Dr. R Ramya Bharathi - Paediatrician',
     description: 'Expert pediatric care for children 0-18 years',
   },
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   alternates: {
     canonical: 'https://drramya-paediatrics.vercel.app',
   },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
