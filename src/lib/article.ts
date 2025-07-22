@@ -1,4 +1,5 @@
 // src/lib/articles.ts
+import yaml from 'js-yaml';
 
 export interface IAPSource {
   title: string;
@@ -160,14 +161,20 @@ Fever is one of the most common reasons parents seek medical attention for their
     iapSources: [
       {
         title: 'IAP Guidelines on Fever Management in Children',
-        url: 'https://iapindia.org/pdf/fever-management-guidelines.pdf',
+        url: 'https://iapindia.org/pdf/IAP-Guidelines-for-Fever.pdf', // ✅ Correct URL
         type: 'Guideline',
         publishDate: '2023'
       },
       {
-        title: 'IAP Position Paper on Antipyretic Use in Children',
-        url: 'https://iapindia.org/pdf/antipyretic-position-paper.pdf',
-        type: 'Position Paper',
+        title: 'IAP Standard Treatment Guidelines - Management of Fever without Focus in Office Practice',
+        url: 'https://iapindia.org/pdf/Ch-146-Management-of-Fever-without-Focus-in-Office-Practice.pdf', // ✅ Add this
+        type: 'Clinical Guidelines',
+        publishDate: '2023'
+      },
+      {
+        title: 'IAP Comprehensive Guidelines Repository',
+        url: 'https://iapindia.org/publication-recommendations-and-guidelines/', // ✅ Add this  
+        type: 'Guidelines Repository',
         publishDate: '2023'
       }
     ]
@@ -346,61 +353,15 @@ function parseFrontmatter(content: string): { frontmatter: any; content: string 
   const frontmatterText = match[1];
   const markdownContent = match[2];
   
-  // Enhanced YAML parser
-  const frontmatter: any = {};
-  const lines = frontmatterText.split('\n');
-  let currentKey = '';
-  let inArray = false;
-  let arrayItems: string[] = [];
-  let inObject = false;
-  let objectItems: any = {};
-  
-  for (const line of lines) {
-    const trimmedLine = line.trim();
-    
-    if (!trimmedLine) continue;
-    
-    if (trimmedLine.startsWith('-') && inArray) {
-      // Array item
-      arrayItems.push(trimmedLine.substring(1).trim().replace(/^["']|["']$/g, ''));
-    } else if (trimmedLine.includes(':')) {
-      // Save previous array if we were in one
-      if (inArray && currentKey) {
-        frontmatter[currentKey] = arrayItems;
-        arrayItems = [];
-        inArray = false;
-      }
-      
-      const [key, ...valueParts] = trimmedLine.split(':');
-      const value = valueParts.join(':').trim().replace(/^["']|["']$/g, '');
-      currentKey = key.trim();
-      
-      if (value === '') {
-        // Might be start of array or object
-        inArray = true;
-        arrayItems = [];
-      } else if (value.startsWith('[') && value.endsWith(']')) {
-        // Inline array
-        frontmatter[currentKey] = value.slice(1, -1).split(',').map(s => s.trim().replace(/^["']|["']$/g, ''));
-      } else if (value === 'true' || value === 'false') {
-        // Boolean
-        frontmatter[currentKey] = value === 'true';
-      } else if (!isNaN(Number(value))) {
-        // Number
-        frontmatter[currentKey] = Number(value);
-      } else {
-        // String
-        frontmatter[currentKey] = value;
-      }
-    }
+  try {
+    const frontmatter = yaml.load(frontmatterText) as any;
+    console.log('YAML parsed frontmatter:', frontmatter); // Debug
+    console.log('YAML parsed iapSources:', frontmatter?.iapSources); // Debug
+    return { frontmatter: frontmatter || {}, content: markdownContent };
+  } catch (error) {
+    console.error('YAML parsing error:', error);
+    return { frontmatter: {}, content: markdownContent };
   }
-  
-  // Handle final array
-  if (inArray && currentKey) {
-    frontmatter[currentKey] = arrayItems;
-  }
-  
-  return { frontmatter, content: markdownContent };
 }
 
 // Get article by slug
@@ -421,18 +382,20 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
         console.log(`Successfully loaded markdown file: ${fileName}.md`);
         
         const { frontmatter, content } = parseFrontmatter(markdownContent);
+        console.log('Parsed frontmatter title:', frontmatter.title);
+        console.log('Parsed frontmatter publishDate:', frontmatter.publishDate);
         
-        // Create article from markdown
+        // ✅ Create article from markdown frontmatter
         const article: Article = {
           id: frontmatter.id || slug,
-          title: frontmatter.title || 'Article Title',
+          title: frontmatter.title || 'Article Title', // This should use frontmatter.title
           description: frontmatter.description || 'Article description',
           content: content,
           htmlContent: markdownToHtml(content),
           category: frontmatter.category || 'Common Conditions',
           tags: frontmatter.tags || [],
           readingTime: frontmatter.readingTime || 5,
-          publishDate: frontmatter.publishDate || new Date().toISOString(),
+          publishDate: frontmatter.publishDate || new Date().toISOString(), // ✅ Use frontmatter date
           lastUpdated: frontmatter.lastUpdated || frontmatter.publishDate || new Date().toISOString(),
           ageGroup: frontmatter.ageGroup || 'All Ages',
           severity: frontmatter.severity || 'Low',
@@ -443,7 +406,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
           views: frontmatter.views || 0
         };
         
-        console.log(`Article loaded successfully:`, article.title);
+        console.log(`Article created from markdown:`, article.title);
         return article;
       }
     }

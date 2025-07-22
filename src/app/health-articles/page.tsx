@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Search, Filter, ArrowRight, Clock, Calendar, Star, BookOpen, TrendingUp } from 'lucide-react';
-import { getAllArticles, getFeaturedArticles, type Article } from '@/lib/article';
+import { getFeaturedArticles, getAllArticles } from '@/data/articles';
 
 export default function HealthArticlesPage() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -17,23 +17,47 @@ export default function HealthArticlesPage() {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        console.log('Loading all articles...');
-        const [allArticles, featured] = await Promise.all([
-          getAllArticles(),
-          getFeaturedArticles()
-        ]);
-        
-        console.log('Articles loaded:', allArticles.length);
-        console.log('Featured articles:', featured.length);
-        
-        setArticles(allArticles);
-        setFeaturedArticles(featured);
-        setFilteredArticles(allArticles);
+        // ✅ Use shared data sources
+        const featuredArticlesData = getFeaturedArticles();
+        const allArticlesData = getAllArticles();
+
+        // Fetch real view counts for featured articles
+        const featuredWithViews = await Promise.all(
+          featuredArticlesData.map(async (article) => {
+            try {
+              const response = await fetch(`/api/views/${article.slug}`);
+              const data = await response.json();
+              return { ...article, views: data.views };
+            } catch (error) {
+              console.error(`Error fetching views for ${article.slug}:`, error);
+              return article;
+            }
+          })
+        );
+
+        // Fetch real view counts for all articles
+        const allWithViews = await Promise.all(
+          allArticlesData.map(async (article) => {
+            try {
+              const response = await fetch(`/api/views/${article.slug}`);
+              const data = await response.json();
+              return { ...article, views: data.views };
+            } catch (error) {
+              console.error(`Error fetching views for ${article.slug}:`, error);
+              return article;
+            }
+          })
+        );
+
+        setFeaturedArticles(featuredWithViews);
+        setArticles(allWithViews);
+        setFilteredArticles(allWithViews);
       } catch (error) {
         console.error('Error loading articles:', error);
-        setArticles([]);
-        setFeaturedArticles([]);
-        setFilteredArticles([]);
+        // ✅ Use shared data as fallback
+        setFeaturedArticles(getFeaturedArticles());
+        setArticles(getAllArticles());
+        setFilteredArticles(getAllArticles());
       } finally {
         setLoading(false);
       }

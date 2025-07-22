@@ -4,8 +4,8 @@ description: "Comprehensive guide on managing fever in children, including when 
 category: "Common Conditions"
 tags: ["fever", "temperature", "management", "symptoms", "pediatric care", "home care"]
 readingTime: 8
-publishDate: "2024-01-15"
-lastUpdated: "2024-01-15"
+publishDate: "2024-12-22" # ✅ Update to current date
+lastUpdated: "2024-12-22" # ✅ Update to current date  
 ageGroup: "All Ages"
 severity: "Medium"
 featured: true
@@ -14,21 +14,20 @@ author: "Dr. R Ramya Bharathi"
 views: 1547
 iapSources:
   - title: "IAP Guidelines on Fever Management in Children"
-    url: "https://iapindia.org/pdf/fever-management-guidelines.pdf"
+    url: "https://iapindia.org/pdf/IAP-Guidelines-for-Fever.pdf"
     type: "Guideline"
     publishDate: "2023"
-  - title: "IAP Position Paper on Antipyretic Use in Children"
-    url: "https://iapindia.org/pdf/antipyretic-position-paper.pdf"
-    type: "Position Paper"
+  - title: "IAP Standard Treatment Guidelines - Management of Fever without Focus in Office Practice"
+    url: "https://iapindia.org/pdf/Ch-146-Management-of-Fever-without-Focus-in-Office-Practice.pdf"
+    type: "Clinical Guidelines"
     publishDate: "2023"
-  - title: "IAP Textbook of Pediatrics - Chapter on Fever"
-    url: "https://iapindia.org/textbook/fever-chapter"
-    type: "Educational Material"
+  - title: "IAP Comprehensive Guidelines Repository"
+    url: "https://iapindia.org/publication-recommendations-and-guidelines/"
+    type: "Guidelines Repository"
     publishDate: "2023"
 ---
 
 # Fever in Children: Complete Management Guide
-
 Fever is one of the most common reasons parents seek medical attention for their children. Understanding when fever is concerning and how to manage it properly can help parents provide appropriate care while knowing when to seek professional help.
 
 ## What is Fever?
@@ -267,26 +266,62 @@ Fever is one of the most common reasons parents seek medical attention for their
 - **Online Consultation:** [Your telemedicine platform]
 - **Clinic Address:** [Your clinic address]
 
----
-
 ## References & Sources
 
-1. **IAP Guidelines on Fever Management in Children** - [View Source](https://iapindia.org/pdf/fever-management-guidelines.pdf)  
-   *Guideline - Published 2023*
+### 1. Indian Academy of Pediatrics (IAP) Resources
 
-2. **IAP Position Paper on Antipyretic Use in Children** - [View Source](https://iapindia.org/pdf/antipyretic-position-paper.pdf)  
-   *Position Paper - Published 2023*
+1. **IAP Guidelines on Fever Management in Children** - [View Source](https://iapindia.org/pdf/IAP-Guidelines-for-Fever.pdf)  
+   *10 FAQs on fever management for parents with IAP guidelines*
 
-3. **IAP Textbook of Pediatrics - Chapter on Fever** - [View Source](https://iapindia.org/textbook/fever-chapter)  
-   *Educational Material - Published 2023*
+2. **IAP Standard Treatment Guidelines - Management of Fever without Focus in Office Practice** - [View Source](https://iapindia.org/pdf/Ch-146-Management-of-Fever-without-Focus-in-Office-Practice.pdf)  
+   *Detailed clinical guidelines for healthcare providers*
 
----
+3. **IAP Comprehensive Guidelines Repository** - [View Source](https://iapindia.org/publication-recommendations-and-guidelines/)  
+   *Complete repository of all IAP recommendations and guidelines*
 
-*This article is based on current IAP guidelines and evidence-based medical practices. The information provided is for educational purposes only and should not replace professional medical advice. Always consult with your pediatrician for personalized medical guidance.*
+4. **Consensus Guidelines on Evaluation and Management of the Febrile Child in Emergency Department** - [View Source](https://www.indianpediatrics.net/aug2017/aug-652-660.htm)  
+   *Evidence-based consensus for ED management - Published in Indian Pediatrics 2017*
 
-**Medical Disclaimer:** This content is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+### 2. World Health Organization (WHO) Guidelines
 
-**Last Updated:** January 15, 2024  
-**Author:** Dr. R Ramya Bharathi, MBBS, DCH, DNB(PAED)  
-**Reviewed by:** IAP Guidelines Committee  
-**Next Review Date:** January 15, 2025
+5. **WHO Pocket Book of Hospital Care for Children - Fever Chapter** - [View Source](https://www.ncbi.nlm.nih.gov/books/NBK154436/)  
+   *Comprehensive fever management guidelines for resource-limited settings*
+
+6. **WHO Guidelines - Main Portal** - [View Source](https://www.who.int/publications/who-guidelines)  
+   *Access to all current WHO clinical guidelines*
+
+7. **WHO Informal Consultation on Fever Management** - [View Source](https://apps.who.int/iris/handle/10665/95116)  
+   *Global review of evidence and practice*
+
+### 3. American Academy of Pediatrics (AAP) Resources
+
+8. **AAP Clinical Practice Guideline: Evaluation and Management of Well-Appearing Febrile Infants 8 to 60 Days Old** - [View Source](https://publications.aap.org/pediatrics/article/148/2/e2021052228/179783/Clinical-Practice-Guideline-Evaluation-and)  
+   *Latest 2021 evidence-based guidelines for febrile infants*
+
+9. **AAP Clinical Report: Fever and Antipyretic Use in Children** - [View Source](https://publications.aap.org/pediatrics/article/127/3/e20103852/65016/Fever-and-Antipyretic-Use-in-Children)  
+   *Comprehensive review of fever management and antipyretic use*
+
+10. **HealthyChildren.org - Fever Resources** - [View Source](https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/default.aspx)  
+    *Parent-friendly fever information from AAP*
+
+11. **AAP Infant Fever Resources** - [View Source](https://www.aap.org/en/patient-care/infant-fever/)  
+    *Specialized resources for infant fever management*
+
+### 4. Additional Evidence-Based Resources
+
+12. **Systematic Review: Symptomatic Fever Management in Children** - [View Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC8211223/)  
+    *Comprehensive review of international fever management guidelines*
+
+13. **American Family Physician: Management of Fever in Infants and Young Children** - [View Source](https://www.aafp.org/pubs/afp/issues/2020/0615/p721.html)  
+    *Practical clinical guidance for primary care providers*
+
+14. **Evidence-Based Approach to Febrile Child in Indian Emergency Department** - [View Source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6018255/)  
+    *India-specific emergency management guidelines*
+
+### 5. Additional IAP Publications
+
+15. **Indian Journal of Pediatrics - Fever Research** - [View Source](https://link.springer.com/article/10.1007/BF02723780)  
+    *Research on antipyretics in children*
+
+16. **Indian Pediatrics - Rational Use of Antipyretics** - [View Source](https://www.indianpediatrics.net/june2003/june-541-544.htm)  
+    *Editorial on rational antipyretic use*

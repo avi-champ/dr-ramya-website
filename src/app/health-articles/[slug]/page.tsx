@@ -16,6 +16,20 @@ export default function ArticleDetailPage({ params }: PageProps) {
   const [loading, setLoading] = useState(true);
   const [slug, setSlug] = useState<string>('');
   
+  // ✅ Add view tracking function
+  const trackPageView = async (slug: string) => {
+    try {
+      const response = await fetch(`/api/views/${slug}`, {
+        method: 'POST',
+      });
+      const data = await response.json();
+      return data.views;
+    } catch (error) {
+      console.error('Error tracking view:', error);
+      return null;
+    }
+  };
+
   useEffect(() => {
     // Await params and get the article from markdown files
     const loadArticle = async () => {
@@ -25,9 +39,22 @@ export default function ArticleDetailPage({ params }: PageProps) {
       
       try {
         console.log('Loading article with slug:', articleSlug);
-        // Get the article from markdown files via utility function
         const foundArticle = await getArticleBySlug(articleSlug);
-        console.log('Article loaded:', foundArticle ? foundArticle.title : 'Not found');
+        console.log('Article loaded from markdown:', foundArticle ? foundArticle.title : 'Not found');
+        
+        if (foundArticle) {
+          // ✅ DON'T override the markdown data with shared data
+          // Use the markdown content as-is, only add view tracking
+          const updatedViews = await trackPageView(articleSlug);
+          if (updatedViews) {
+            foundArticle.views = updatedViews;
+          }
+          
+          console.log('Article title:', foundArticle.title);
+          console.log('Article publishDate:', foundArticle.publishDate);
+          console.log('Article views after tracking:', foundArticle.views);
+        }
+        
         setArticle(foundArticle);
       } catch (error) {
         console.error('Error loading article:', error);
@@ -299,35 +326,6 @@ export default function ArticleDetailPage({ params }: PageProps) {
             Always consult with your pediatrician for personalized medical guidance.
           </p>
         </div>
-
-        {/* References Section */}
-        {article.iapSources && article.iapSources.length > 0 && (
-          <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4">References & Sources</h2>
-            <div className="space-y-4">
-              {article.iapSources.map((source, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="flex-1">
-                    <a 
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-700 hover:text-blue-800 font-medium"
-                    >
-                      {index + 1}. {source.title}
-                    </a>
-                    <div className="text-sm text-gray-600 mt-1">
-                      {source.type} • Published {source.publishDate}
-                      {source.url && source.url.endsWith('.pdf') && (
-                        <span className="ml-2 text-blue-600">(PDF)</span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
