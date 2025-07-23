@@ -33,6 +33,21 @@ const nextConfig: NextConfig = {
       test: /\.md$/,
       use: 'raw-loader',
     });
+    
+    // Optimize cache settings for Windows
+    if (process.platform === 'win32') {
+      config.cache = {
+        type: 'filesystem',
+        cacheDirectory: '.next/cache/webpack',
+        buildDependencies: {
+          config: [__filename],
+        },
+        // Reduce file system pressure
+        compression: 'gzip',
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
+      };
+    }
+    
     return config;
   },
   

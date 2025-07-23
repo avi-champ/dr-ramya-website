@@ -1,332 +1,228 @@
-'use client';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { marked } from 'marked';
+import { ArrowLeft, Clock, Calendar, User, AlertCircle } from 'lucide-react';
+import ShareButton from './ShareButton';
+import ViewTracker from '@/components/health-articles/ViewTracker';
+import { getFilenameFromSlug } from '@/lib/article-server';
 
-import { useState, useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar, ExternalLink, Share2, BookOpen, AlertTriangle, CheckCircle, User, Eye, Star } from 'lucide-react';
-import {getArticleBySlug, getAllArticles, getFeaturedArticles, type Article } from '@/lib/article';
-
-// Page Props interface for Next.js App Router
-interface PageProps {
+interface ArticlePageProps {
   params: Promise<{
     slug: string;
   }>;
 }
 
-export default function ArticleDetailPage({ params }: PageProps) {
-  const [article, setArticle] = useState<Article | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [slug, setSlug] = useState<string>('');
-  
-  // ✅ Add view tracking function
-  const trackPageView = async (slug: string) => {
-    try {
-      const response = await fetch(`/api/views/${slug}`, {
-        method: 'POST',
-      });
-      const data = await response.json();
-      return data.views;
-    } catch (error) {
-      console.error('Error tracking view:', error);
-      return null;
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  try {
+    // Await params before using its properties
+    const { slug } = await params;
+    
+    // Get the correct filename for this slug
+    const filename = getFilenameFromSlug(slug);
+    
+    if (!filename) {
+      console.log(`No filename mapping found for slug: ${slug}`);
+      notFound();
     }
-  };
+    
+    // Read the markdown file using the mapped filename
+    const filePath = path.join(process.cwd(), 'src', 'content', 'articles', `${filename}.md`);
+    
+    if (!fs.existsSync(filePath)) {
+      console.log(`File does not exist: ${filePath}`);
+      notFound();
+    }
 
-  useEffect(() => {
-    // Await params and get the article from markdown files
-    const loadArticle = async () => {
-      const resolvedParams = await params;
-      const articleSlug = resolvedParams.slug;
-      setSlug(articleSlug);
-      
-      try {
-        console.log('Loading article with slug:', articleSlug);
-        const foundArticle = await getArticleBySlug(articleSlug);
-        console.log('Article loaded from markdown:', foundArticle ? foundArticle.title : 'Not found');
-        
-        if (foundArticle) {
-          // ✅ DON'T override the markdown data with shared data
-          // Use the markdown content as-is, only add view tracking
-          const updatedViews = await trackPageView(articleSlug);
-          if (updatedViews) {
-            foundArticle.views = updatedViews;
-          }
-          
-          console.log('Article title:', foundArticle.title);
-          console.log('Article publishDate:', foundArticle.publishDate);
-          console.log('Article views after tracking:', foundArticle.views);
-        }
-        
-        setArticle(foundArticle);
-      } catch (error) {
-        console.error('Error loading article:', error);
-        setArticle(null);
-      } finally {
-        setLoading(false);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data: frontMatter, content } = matter(fileContents);
+    
+    // Remove the first H1 heading from content since we display title in metadata
+    const contentWithoutTitle = content.replace(/^#\s+.*$/m, '').trim();
+    
+    // Convert markdown to HTML
+    const htmlContent = marked(contentWithoutTitle);
+
+    const getCategoryColor = (category: string) => {
+      switch (category) {
+        case 'Common Conditions': return 'text-blue-600 bg-blue-50';
+        case 'Vaccination': return 'text-purple-600 bg-purple-50';
+        case 'Emergency Care': return 'text-red-600 bg-red-50';
+        case 'Development': return 'text-green-600 bg-green-50';
+        case 'Nutrition': return 'text-orange-600 bg-orange-50';
+        case 'Prevention': return 'text-teal-600 bg-teal-50';
+        case 'Newborn Care': return 'text-pink-600 bg-pink-50';
+        case 'Allergic Conditions': return 'text-indigo-600 bg-indigo-50';
+        case 'Sleep & Behavior': return 'text-cyan-600 bg-cyan-50';
+        default: return 'text-gray-600 bg-gray-50';
       }
     };
-    
-    loadArticle();
-  }, [params]);
 
-  const getSeverityColor = (severity: string) => {
-    switch (severity) {
-      case 'Low': return 'text-green-600 bg-green-50 border-green-200';
-      case 'Medium': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
-      case 'High': return 'text-orange-600 bg-orange-50 border-orange-200';
-      case 'Emergency': return 'text-red-600 bg-red-50 border-red-200';
-      default: return 'text-gray-600 bg-gray-50 border-gray-200';
-    }
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Common Conditions': return 'text-blue-600 bg-blue-50';
-      case 'Vaccination': return 'text-purple-600 bg-purple-50';
-      case 'Emergency Care': return 'text-red-600 bg-red-50';
-      case 'Development': return 'text-green-600 bg-green-50';
-      case 'Nutrition': return 'text-orange-600 bg-orange-50';
-      case 'Prevention': return 'text-teal-600 bg-teal-50';
-      default: return 'text-gray-600 bg-gray-50';
-    }
-  };
-
-  const handleShare = async () => {
-    if (navigator.share && article) {
-      try {
-        await navigator.share({
-          title: article.title,
-          text: article.description,
-          url: window.location.href,
-        });
-      } catch (error) {
-        console.log('Error sharing:', error);
-        // Fallback to clipboard
-        navigator.clipboard.writeText(window.location.href);
-        alert('Article link copied to clipboard!');
+    const getSeverityColor = (severity: string) => {
+      switch (severity) {
+        case 'Low': return 'text-green-600 bg-green-50';
+        case 'Medium': return 'text-yellow-600 bg-yellow-50';
+        case 'High': return 'text-orange-600 bg-orange-50';
+        case 'Emergency': return 'text-red-600 bg-red-50';
+        default: return 'text-gray-600 bg-gray-50';
       }
-    } else {
-      // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href);
-      alert('Article link copied to clipboard!');
-    }
-  };
+    };
 
-  if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading article...</p>
-          <p className="text-sm text-gray-500 mt-2">Loading: {slug}</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!article) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Article not found</h1>
-          <p className="text-gray-600 mb-4">The article "{slug}" could not be found.</p>
-          <button 
-            onClick={() => window.location.href = '/health-articles'}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Back to Health Articles
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation Header */}
-      <div className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <button 
-              onClick={() => window.location.href = '/health-articles'}
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+      <div className="min-h-screen bg-gray-50">
+        {/* Header with Navigation */}
+        <div className="bg-white shadow-sm border-b">
+          <div className="max-w-4xl mx-auto px-6 py-4">
+            <Link 
+              href="/health-articles"
+              className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm mb-4"
             >
-              <ArrowLeft className="w-5 h-5" />
-              <span>Back to Articles</span>
-            </button>
-            
-            <div className="flex items-center gap-4">
-              <button 
-                onClick={handleShare}
-                className="flex items-center gap-2 px-3 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <Share2 className="w-4 h-4" />
-                Share
-              </button>
-            </div>
+              <ArrowLeft className="w-4 h-4" />
+              Back to Articles
+            </Link>
           </div>
         </div>
-      </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        {/* Article Header */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-8">
-          {/* Category and Severity Badges */}
-          <div className="flex items-center gap-3 mb-6 flex-wrap">
-            <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(article.category)}`}>
-              {article.category}
-            </span>
-            <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getSeverityColor(article.severity)}`}>
-              <AlertTriangle className="w-4 h-4 inline mr-1" />
-              {article.severity} Priority
-            </span>
-            {article.featured && (
-              <span className="px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                <Star className="w-4 h-4 inline mr-1" />
-                Featured Article
-              </span>
-            )}
-          </div>
-
-          {/* Title */}
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {article.title}
-          </h1>
-
-          {/* Description */}
-          <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-            {article.description}
-          </p>
-
-          {/* Article Meta */}
-          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              <span>{article.author}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>{new Date(article.publishDate).toLocaleDateString()}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>{article.readingTime} min read</span>
-            </div>
-            {article.views && (
-              <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4" />
-                <span>{article.views} views</span>
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <article className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            {/* Article Header */}
+            <div className="p-8 border-b border-gray-100">
+              <div className="flex items-center gap-2 mb-4">
+                <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(frontMatter.category)}`}>
+                  {frontMatter.category}
+                </span>
+                {frontMatter.severity && (
+                  <span className={`px-2 py-1 rounded text-xs font-medium ${getSeverityColor(frontMatter.severity)}`}>
+                    {frontMatter.severity} Priority
+                  </span>
+                )}
               </div>
-            )}
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {article.tags.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-                #{tag}
-              </span>
-            ))}
-          </div>
-
-          {/* Age Group and Last Updated */}
-          <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">Age Group:</span>
-              <span className="text-sm font-medium text-gray-900">{article.ageGroup}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">Last Updated:</span>
-              <span className="text-sm font-medium text-gray-900">
-                {new Date(article.lastUpdated).toLocaleDateString()}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* IAP Sources Section */}
-        {article.iapSources && article.iapSources.length > 0 && (
-          <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-6 mb-8">
-            <div className="flex items-center gap-2 mb-4">
-              <CheckCircle className="w-5 h-5 text-blue-600" />
-              <h3 className="font-serif text-lg font-semibold text-blue-900">
-                Evidence-Based Sources
-              </h3>
-            </div>
-            <p className="text-blue-800 mb-4 text-sm">
-              This article is based on guidelines and position papers from the Indian Academy of Pediatrics (IAP)
-            </p>
-            <div className="space-y-3">
-              {article.iapSources.map((source, index) => (
-                <div key={index} className="flex items-center gap-3 p-3 bg-white rounded-lg">
-                  <ExternalLink className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                  <div className="flex-1">
-                    <a 
-                      href={source.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-700 hover:text-blue-800 font-medium text-sm hover:underline"
-                    >
-                      {source.title}
-                    </a>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="text-xs text-gray-500">{source.type}</span>
-                      {source.publishDate && (
-                        <>
-                          <span className="text-xs text-gray-400">•</span>
-                          <span className="text-xs text-gray-500">{source.publishDate}</span>
-                        </>
-                      )}
-                    </div>
+              
+              {/* Decorative Article Metadata */}
+              <div className="mb-8">
+                <h1 className="font-serif text-3xl font-bold text-gray-900 mb-4">
+                  {frontMatter.title}
+                </h1>
+                
+                <p className="text-lg text-gray-600 mb-8">
+                  {frontMatter.description}
+                </p>
+              </div>
+              <div className="relative">
+                {/* Decorative line with center icon */}
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                </div>
+                <div className="relative flex justify-center">
+                  <div className="bg-white px-4">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
+              </div>
+              
+              <div className="mt-8 bg-gradient-to-r from-blue-50/50 via-white to-purple-50/50 rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+                    {/* Author Info */}
+                    <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm rounded-xl px-4 py-3 shadow-sm border border-white/50">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-md">
+                          <User className="w-5 h-5 text-white" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900">Dr. R Ramya Bharathi</p>
+                        <p className="text-xs text-blue-600">Consultant Pediatrician</p>
+                      </div>
+                    </div>
+                    
+                    {/* Reading Stats */}
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-2 text-sm text-gray-600 bg-white/70 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/50">
+                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                          <Clock className="w-3 h-3 text-green-600" />
+                        </div>
+                        <span className="font-medium">{frontMatter.readingTime} min read</span>
+                      </div>
+                      
+                      <div className="flex items-center gap-2 text-sm text-gray-600 bg-white/70 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/50">
+                        <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center">
+                          <Calendar className="w-3 h-3 text-purple-600" />
+                        </div>
+                        <span className="font-medium">
+                          {new Date(frontMatter.publishDate).toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'short', 
+                            day: 'numeric' 
+                          })}
+                        </span>
+                      </div>
 
-        {/* Article Content */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-          <div className="p-8">
-            <div 
-              className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900"
-              dangerouslySetInnerHTML={{ __html: article.htmlContent }}
-            />
-          </div>
-        </div>
-
-        {/* Footer Actions */}
-        <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <button 
-                onClick={() => window.print()}
-                className="flex items-center gap-2 px-4 py-2 text-sm bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
-              >
-                <BookOpen className="w-4 h-4" />
-                Print Article
-              </button>
-              <button 
-                onClick={handleShare}
-                className="flex items-center gap-2 px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <Share2 className="w-4 h-4" />
-                Share Article
-              </button>
+                      {/* Dynamic View Counter */}
+                      <ViewTracker slug={slug} />
+                    </div>
+                  </div>
+                  
+                  {/* Share Button */}
+                  <div className="flex items-center justify-center lg:justify-end">
+                    <ShareButton 
+                      title={frontMatter.title}
+                      description={frontMatter.description}
+                      url={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'}/health-articles/${slug}`}
+                    />
+                  </div>
+                </div>
+                
+                {/* Subtle decorative elements */}
+                <div className="absolute top-2 right-2 w-16 h-16 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-xl"></div>
+                <div className="absolute bottom-2 left-2 w-12 h-12 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-xl"></div>
+              </div>
             </div>
             
-            <div className="text-sm text-gray-500">
-              Questions? <a href="/#contact" className="text-blue-600 hover:underline">Contact Dr. Ramya</a>
+            {/* Article Content */}
+            <div className="p-8">
+              <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700" 
+                   dangerouslySetInnerHTML={{ __html: htmlContent }} 
+              />
+            </div>
+            
+            {/* Article Footer */}
+            <div className="p-8 bg-gray-50 border-t border-gray-100">
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-gray-600">
+                  <p>Age Group: <span className="font-medium">{frontMatter.ageGroup}</span></p>
+                  {frontMatter.lastUpdated && (
+                    <p className="mt-1">Last Updated: {new Date(frontMatter.lastUpdated).toLocaleDateString()}</p>
+                  )}
+                </div>
+                
+                <Link 
+                  href="/health-articles"
+                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  View All Articles
+                </Link>
+              </div>
+            </div>
+          </article>
+          
+          {/* Medical Disclaimer */}
+          <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <div className="flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+              <div className="text-sm text-yellow-800">
+                <p className="font-medium mb-1">Medical Disclaimer</p>
+                <p>This article is for educational purposes only and should not replace professional medical advice. Always consult with your pediatrician for personalized medical guidance.</p>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Disclaimer */}
-        <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-          <p className="text-sm text-yellow-800">
-            <strong>Medical Disclaimer:</strong> This article is for educational purposes only and should not replace professional medical advice. 
-            Always consult with your pediatrician for personalized medical guidance.
-          </p>
-        </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error('Error loading article:', error);
+    notFound();
+  }
 }

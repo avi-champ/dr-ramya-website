@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { BookOpen, ArrowRight, Star, Clock, ExternalLink } from 'lucide-react';
-import { articlesData, getFeaturedArticles } from '@/data/articles';
+import { getFeaturedArticles, type Article } from '@/data/articles';
 
 const services = [
 	{
@@ -56,27 +56,24 @@ export default function Home() {
 
 		const loadFeaturedArticles = async () => {
 			try {
-				// Simulate async loading
-				await new Promise((resolve) => setTimeout(resolve, 500));
-
-				// ✅ Use the shared data instead of featuredArticlesData
-				const featuredArticlesData = getFeaturedArticles(); // Get from shared source
+				// ✅ Fetch featured articles with real markdown frontmatter data
+				const response = await fetch('/api/articles/featured');
+				if (!response.ok) throw new Error('Failed to fetch featured articles');
+				
+				const featuredArticlesData = await response.json();
 
 				const articlesWithViews = await Promise.all(
-					featuredArticlesData.map(async (article) => {
+					featuredArticlesData.map(async (article: Article) => {
 						try {
-							const response = await fetch(`/api/views/${article.slug}`);
-							const data = await response.json();
+							const viewResponse = await fetch(`/api/views/${article.slug}`);
+							const viewData = await viewResponse.json();
 							return {
 								...article,
-								views: data.views,
-								// ✅ Remove these lines that override dates:
-								// publishDate: '2024-12-22',
-								// lastUpdated: '2024-12-22',
+								views: viewData.views,
 							};
 						} catch (error) {
 							console.error(`Error fetching views for ${article.slug}:`, error);
-							return article; // Return original article without date override
+							return article; // Return original article without view count
 						}
 					})
 				);
@@ -84,15 +81,9 @@ export default function Home() {
 				setFeaturedArticles(articlesWithViews);
 			} catch (error) {
 				console.error('Error loading featured articles:', error);
-				// ✅ Use shared data as fallback too
+				// ✅ Use shared data as fallback
 				const fallbackData = getFeaturedArticles();
-				setFeaturedArticles(
-					fallbackData.map((article) => ({
-						...article,
-						publishDate: '2024-12-22', // ✅ Current date
-						lastUpdated: '2024-12-22', // ✅ Current date
-					}))
-				);
+				setFeaturedArticles(fallbackData);
 			} finally {
 				setArticlesLoading(false);
 			}

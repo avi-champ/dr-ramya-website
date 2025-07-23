@@ -1,5 +1,17 @@
 // src/lib/articles.ts
+// ✅ PRIMARY SOURCE FOR ARTICLE DATA - Reads directly from markdown files
+// This ensures publishDate and lastUpdated are always from the single source of truth
 import yaml from 'js-yaml';
+
+// Only import fs and path on server side
+let fs: any = null;
+let path: any = null;
+
+if (typeof window === 'undefined') {
+  // Server-side imports
+  fs = require('fs');
+  path = require('path');
+}
 
 export interface IAPSource {
   title: string;
@@ -33,31 +45,48 @@ export interface Article {
   views?: number;
 }
 
-// Dynamic imports for markdown files (corrected path)
+// Dynamic imports for markdown files with server/client compatibility
 const importMarkdownFile = async (fileName: string): Promise<string | null> => {
   try {
-    console.log(`Trying to fetch markdown file: ${fileName}.md`);
-    
-    // Use fetch to get markdown content from our API route
-    const response = await fetch(`/api/articles/${fileName}.md`);
-    
-    if (response.ok) {
-      const content = await response.text();
-      console.log(`Successfully fetched markdown file: ${fileName}.md`);
-      console.log('Content preview:', content.substring(0, 200) + '...');
-      return content;
+    // Check if we're on the server side
+    if (typeof window === 'undefined') {
+      // Server-side: read file directly from filesystem
+      try {
+        console.log(`Server-side: Reading markdown file directly: ${fileName}.md`);
+        if (!fs || !path) {
+          console.log('fs or path modules not available');
+          return null;
+        }
+        const filePath = path.join(process.cwd(), 'src', 'content', 'articles', `${fileName}.md`);
+        const content = fs.readFileSync(filePath, 'utf8');
+        console.log(`Successfully read markdown file: ${fileName}.md`);
+        return content;
+      } catch (fsError) {
+        console.log(`Server-side file read failed for: ${fileName}.md`, fsError);
+        return null;
+      }
     } else {
-      console.log(`Failed to fetch markdown file: ${fileName}.md, status: ${response.status}`);
-      return null;
+      // Client-side: use fetch to get content from API route
+      console.log(`Client-side: Fetching markdown file: ${fileName}.md`);
+      const response = await fetch(`/api/articles/${fileName}.md`);
+      
+      if (response.ok) {
+        const content = await response.text();
+        console.log(`Successfully fetched markdown file: ${fileName}.md`);
+        return content;
+      } else {
+        console.log(`Failed to fetch markdown file: ${fileName}.md, status: ${response.status}`);
+        return null;
+      }
     }
   } catch (error) {
-    console.log(`Error fetching markdown file: ${fileName}.md`, error);
+    console.log(`Error with markdown file: ${fileName}.md`, error);
     
-    // Fallback: try dynamic import (original method)
+    // Fallback: try dynamic import (for build-time bundling)
     try {
       console.log(`Attempting dynamic import fallback for: ${fileName}.md`);
-      const module = await import(`../content/articles/${fileName}.md`);
-      return module.default || module;
+      const moduleImport = await import(`../content/articles/${fileName}.md`);
+      return moduleImport.default || moduleImport;
     } catch (importError) {
       console.log(`Dynamic import also failed for: ${fileName}.md`, importError);
       return null;
@@ -65,19 +94,28 @@ const importMarkdownFile = async (fileName: string): Promise<string | null> => {
   }
 };
 
-// Article slug to file name mapping
+// Article slug to file name mapping - comprehensive mapping
 const articleFileMap: { [key: string]: string } = {
+  // Map both old and new slugs to the correct filenames
   'fever-in-children-guide': 'fever-in-children',
   'fever-in-children': 'fever-in-children',
+  'pediatric-vaccination-guidelines': 'vaccination-guidelines',
   'vaccination-guidelines-iap': 'vaccination-guidelines',
   'vaccination-guidelines': 'vaccination-guidelines',
   'common-cold-treatment': 'common-cold-treatment',
+  'childhood-allergies-guide': 'childhood-allergies',
   'childhood-allergies': 'childhood-allergies',
+  'developmental-milestones-guide': 'developmental-milestones',
   'developmental-milestones': 'developmental-milestones',
+  'diarrhea-management-guide': 'diarrhea-management',
   'diarrhea-management': 'diarrhea-management',
+  'pediatric-emergency-poisoning-guide': 'emergency-signs',
   'emergency-signs': 'emergency-signs',
+  'newborn-care-complete-guide': 'newborn-care',
   'newborn-care': 'newborn-care',
+  'child-nutrition-complete-guide': 'nutrition-guidelines',
   'nutrition-guidelines': 'nutrition-guidelines',
+  'pediatric-sleep-patterns-guide': 'sleep-patterns',
   'sleep-patterns': 'sleep-patterns',
 };
 
@@ -311,7 +349,7 @@ function markdownToHtml(markdown: string): string {
     
     // Lists (improved handling)
     .replace(/^\- (.*$)/gim, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>)/gims, (match) => {
+    .replace(/(<li>.*<\/li>)/gi, (match) => {
       return '<ul>' + match + '</ul>';
     })
     .replace(/<\/ul>\s*<ul>/gim, '')
@@ -333,10 +371,10 @@ function markdownToHtml(markdown: string): string {
   html = html
     .replace(/<p><\/p>/gim, '')
     .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/gim, '$1')
-    .replace(/<p>(<ul>.*<\/ul>)<\/p>/gims, '$1')
-    .replace(/<p>(<ol>.*<\/ol>)<\/p>/gims, '$1')
+    .replace(/<p>(<ul>.*<\/ul>)<\/p>/gi, '$1')
+    .replace(/<p>(<ol>.*<\/ol>)<\/p>/gi, '$1')
     .replace(/<p>(<blockquote>.*<\/blockquote>)<\/p>/gim, '$1')
-    .replace(/<p>(<pre><code>.*<\/code><\/pre>)<\/p>/gims, '$1');
+    .replace(/<p>(<pre><code>.*<\/code><\/pre>)<\/p>/gi, '$1');
   
   return html;
 }
@@ -475,4 +513,9 @@ export async function getAllArticles(): Promise<Article[]> {
 export async function getFeaturedArticles(): Promise<Article[]> {
   const allArticles = await getAllArticles();
   return allArticles.filter(article => article.featured);
+}
+
+// Helper function to get filename from slug (for use in individual article pages)
+export function getFilenameFromSlug(slug: string): string | null {
+  return articleFileMap[slug] || null;
 }

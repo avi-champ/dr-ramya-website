@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Filter, ArrowRight, Clock, Calendar, Star, BookOpen, TrendingUp } from 'lucide-react';
-import { getFeaturedArticles, getAllArticles } from '@/data/articles';
+import { Search, ArrowRight, Clock, Calendar, Star, BookOpen } from 'lucide-react';
+import { type Article } from '@/data/articles';
 
 export default function HealthArticlesPage() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -17,9 +17,18 @@ export default function HealthArticlesPage() {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        // ✅ Use shared data sources
-        const featuredArticlesData = getFeaturedArticles();
-        const allArticlesData = getAllArticles();
+        // ✅ Fetch articles from API routes to get real markdown frontmatter data
+        const [featuredResponse, allResponse] = await Promise.all([
+          fetch('/api/articles/featured'),
+          fetch('/api/articles')
+        ]);
+
+        if (!featuredResponse.ok || !allResponse.ok) {
+          throw new Error('Failed to fetch articles');
+        }
+
+        const featuredArticlesData = await featuredResponse.json();
+        const allArticlesData = await allResponse.json();
 
         // Fetch real view counts for featured articles
         const featuredWithViews = await Promise.all(
@@ -55,9 +64,11 @@ export default function HealthArticlesPage() {
       } catch (error) {
         console.error('Error loading articles:', error);
         // ✅ Use shared data as fallback
-        setFeaturedArticles(getFeaturedArticles());
-        setArticles(getAllArticles());
-        setFilteredArticles(getAllArticles());
+        const fallbackFeatured = getFeaturedArticles();
+        const fallbackAll = getAllArticles();
+        setFeaturedArticles(fallbackFeatured);
+        setArticles(fallbackAll);
+        setFilteredArticles(fallbackAll);
       } finally {
         setLoading(false);
       }
@@ -256,7 +267,7 @@ export default function HealthArticlesPage() {
             </h2>
             {searchTerm && (
               <p className="text-gray-600">
-                Showing results for "{searchTerm}"
+                Showing results for &ldquo;{searchTerm}&rdquo;
               </p>
             )}
           </div>
@@ -297,7 +308,7 @@ export default function HealthArticlesPage() {
                       
                       <div className="flex items-center gap-1 text-sm text-gray-500">
                         <Calendar className="w-4 h-4" />
-                        {new Date(article.publishDate).toLocaleDateString()}
+                        {new Date(article.lastUpdated).toLocaleDateString()}
                       </div>
                     </div>
 
