@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
+import ResponsiveLayout from '@/components/layout/ResponsiveLayout'
 
 const playfairDisplay = Playfair_Display({ 
   subsets: ['latin'], 
@@ -41,6 +42,14 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0b' }
+  ],
+  colorScheme: 'light dark',
 }
 
 export default function RootLayout({
@@ -51,7 +60,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
       <body className="antialiased">
-        {children}
+        <ResponsiveLayout>
+          {children}
+        </ResponsiveLayout>
       </body>
     </html>
   )
