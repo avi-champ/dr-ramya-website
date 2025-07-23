@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Search, ArrowRight, Clock, Calendar, Star, BookOpen } from 'lucide-react';
 import { type Article } from '@/data/articles';
 
-export default function HealthArticlesPage() {
+function HealthArticlesContent() {
   const searchParams = useSearchParams();
   const [articles, setArticles] = useState<Article[]>([]);
   const [featuredArticles, setFeaturedArticles] = useState<Article[]>([]);
@@ -345,5 +345,20 @@ export default function HealthArticlesPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function HealthArticlesPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 py-12 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading health articles...</p>
+        </div>
+      </div>
+    }>
+      <HealthArticlesContent />
+    </Suspense>
   );
 }
