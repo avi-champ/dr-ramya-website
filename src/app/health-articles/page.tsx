@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Search, ArrowRight, Clock, Calendar, Star, BookOpen } from 'lucide-react';
 import { type Article } from '@/data/articles';
 
 export default function HealthArticlesPage() {
+  const searchParams = useSearchParams();
   const [articles, setArticles] = useState<Article[]>([]);
   const [featuredArticles, setFeaturedArticles] = useState<Article[]>([]);
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
@@ -12,6 +14,14 @@ export default function HealthArticlesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedSeverity, setSelectedSeverity] = useState<string>('All');
+
+  // Initialize filters from URL parameters
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam) {
+      setSelectedCategory(decodeURIComponent(categoryParam));
+    }
+  }, [searchParams]);
 
   // Load articles on component mount
   useEffect(() => {
@@ -199,7 +209,9 @@ export default function HealthArticlesPage() {
               >
                 <option value="All">All Priorities</option>
                 {severities.map(severity => (
-                  <option key={severity} value={severity}>{severity} Priority</option>
+                  <option key={severity} value={severity}>
+                    {severity.includes('Priority') ? severity : `${severity} Priority`}
+                  </option>
                 ))}
               </select>
             </div>

@@ -19,8 +19,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Dr. R Ramya Bharathi - Paediatrician | Expert Child Care',
-  description: 'Dr. R Ramya Bharathi - MBBS, DCH, DNB(PAED). 15+ years of dedicated pediatric care with sophisticated, evidence-based medicine. Expert healthcare for children 0-18 years.',
-  keywords: 'pediatrician, paediatrician, child doctor, baby doctor, vaccination, child health, Dr Ramya Bharathi, expert pediatric care, children healthcare',
+  description: 'Dr. R Ramya Bharathi - MBBS (Tirunelveli Medical College), DCH (Institute of Child Health Egmore), DNB (St. Philomena Bangalore). NICU specialist with Apollo Hospitals experience. Expert in evidence-based pediatric care and responsible antibiotic use for children 0-18 years.',
+  keywords: 'pediatrician, paediatrician, child doctor, baby doctor, vaccination, child health, Dr Ramya Bharathi, NICU specialist, Apollo Hospitals, evidence-based medicine, antibiotic stewardship, expert pediatric care, children healthcare',
   authors: [{ name: 'Dr. R Ramya Bharathi' }],
   openGraph: {
     title: 'Dr. R Ramya Bharathi - Expert Pediatric Care',

@@ -17,10 +17,10 @@ const navigationItems: NavigationItem[] = [
     label: 'Services', 
     href: '/services',
     children: [
-      { label: 'Health Checkups', href: '/services/checkups' },
+      { label: 'Child Developmental Assessment', href: '/services/developmental-assessment' },
       { label: 'Vaccinations', href: '/services/vaccinations' },
-      { label: 'Treatment Care', href: '/services/treatment' },
-      { label: 'Newborn Care', href: '/services/newborn' },
+      { label: 'Treatment Care', href: '/services/treatment-care' },
+      { label: 'Newborn Care', href: '/services/newborn-care' },
     ]
   },
   { label: 'About', href: '/about' },
@@ -160,11 +160,11 @@ export default function ResponsiveNavigation() {
               {/* Contact Info - Desktop Only */}
               <div className="hidden xl:flex items-center space-x-4 text-sm">
                 <a 
-                  href="tel:+91XXXXXXXXXX" 
+                  href="tel:+919363956784" 
                   className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>+91 XXXX XXXXXX</span>
+                  <span>+91 9363956784</span>
                 </a>
               </div>
 
@@ -256,22 +256,22 @@ export default function ResponsiveNavigation() {
           {/* Mobile Contact Info */}
           <div className="p-6 border-t border-gray-200 space-y-4">
             <a 
-              href="tel:+91XXXXXXXXXX" 
+              href="tel:+919363956784" 
               className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors duration-300"
             >
               <Phone className="w-5 h-5" />
-              <span>+91 XXXX XXXXXX</span>
+              <span>+91 9363956784</span>
             </a>
             <a 
-              href="mailto:drramya@example.com" 
+              href="mailto:dr.ramyabharathi@gmail.com" 
               className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors duration-300"
             >
               <Mail className="w-5 h-5" />
-              <span>drramya@example.com</span>
+              <span>dr.ramyabharathi@gmail.com</span>
             </a>
             <div className="flex items-center space-x-3 text-gray-700">
               <MapPin className="w-5 h-5" />
-              <span className="text-sm">Clinic Address, City</span>
+              <span className="text-sm">NewGen Multi Speciality Clinics, A Block, 1A2, 363, Nookampalayam Rd, Arasankalani, Perumbakkam-600126</span>
             </div>
           </div>
         </div>

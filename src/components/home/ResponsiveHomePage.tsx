@@ -3,64 +3,87 @@
 import { useState, useEffect } from 'react';
 import { BookOpen, ArrowRight, Star, Clock, ExternalLink, Users, Award, Calendar, Heart, Shield, Baby, Stethoscope } from 'lucide-react';
 import Link from 'next/link';
-import ResponsiveLayout from '@/components/layout/ResponsiveLayout';
 
 // Optimized for all devices - mobile, tablet, laptop
 const services = [
-  {
-    icon: Stethoscope,
-    title: 'Health Checkups',
-    desc: 'Comprehensive monitoring, growth tracking, and developmental assessments',
-    features: ['Growth Monitoring', 'Developmental Assessment', 'Health Screening'],
-  },
   {
     icon: Shield,
     title: 'Vaccinations',
     desc: 'Complete immunization programs following latest pediatric guidelines',
     features: ['IAP Schedule', 'Government UIP', 'Travel Vaccines'],
+    link: '/health-articles/vaccination-guidelines',
   },
   {
     icon: Heart,
     title: 'Treatment Care',
     desc: 'Expert treatment for childhood illnesses and medical conditions',
     features: ['Acute Care', 'Chronic Conditions', 'Emergency Consultation'],
+    link: '/health-articles/fever-in-children',
   },
   {
     icon: Baby,
     title: 'Newborn Care',
     desc: 'Specialized care for babies including feeding support and development',
     features: ['Feeding Support', 'Sleep Guidance', 'Development Tracking'],
+    link: '/health-articles/newborn-care',
+  },
+  {
+    icon: Stethoscope,
+    title: 'Child Developmental Assessment',
+    desc: 'Comprehensive monitoring of growth milestones and developmental progress',
+    features: ['Growth Tracking', 'Milestone Assessment', 'Behavioral Evaluation'],
+    link: '/health-articles/developmental-milestones',
   },
 ];
 
 const stats = [
-  { icon: Users, label: 'Happy Families', value: '2500+', color: 'text-blue-600' },
+  { icon: Users, label: 'Happy Families', value: '100+', color: 'text-blue-600' },
   { icon: Award, label: 'Years Experience', value: '15+', color: 'text-purple-600' },
-  { icon: Calendar, label: 'Successful Cases', value: '10000+', color: 'text-emerald-600' },
-  { icon: Star, label: 'Patient Rating', value: '4.9/5', color: 'text-orange-600' },
+  { icon: Star, label: 'Patient Rating', value: '4.8/5', color: 'text-orange-600' },
 ];
 
 const testimonials = [
   {
-    name: 'Priya Sharma',
-    location: 'Bangalore',
+    name: 'Lakshmi Venkatesh',
+    location: 'Shollinganallur, Chennai',
     rating: 5,
     text: 'Dr. Ramya has been exceptional in caring for both my children. Her thorough approach and gentle manner make every visit comfortable.',
     avatar: '👩‍🦰'
   },
   {
-    name: 'Rajesh Kumar',
-    location: 'Chennai',
-    rating: 5,
-    text: 'The best pediatrician we have consulted. Very knowledgeable and takes time to explain everything clearly.',
+    name: 'Karthik Raman',
+    location: 'Navalur, Chennai',
+    rating: 4,
+    text: 'Very good pediatrician with extensive knowledge. The clinic is well-maintained and the staff is helpful. Vaccination schedule was clearly explained.',
     avatar: '👨‍💼'
   },
   {
-    name: 'Anitha Reddy',
-    location: 'Hyderabad',
+    name: 'Divya Krishnamurthy',
+    location: 'Karapakkam, Chennai',
     rating: 5,
-    text: 'Dr. Ramya\'s expertise in newborn care was invaluable during my baby\'s first months. Highly recommended!',
+    text: 'Dr. Ramya\'s expertise in newborn care was invaluable during my baby\'s first months. She is very patient and answers all our questions thoroughly.',
     avatar: '👩‍💻'
+  },
+  {
+    name: 'Suresh Murugan',
+    location: 'Sholinganallur, Chennai',
+    rating: 4,
+    text: 'Good experience overall. Dr. Ramya diagnosed my daughter\'s condition correctly and provided effective treatment. Would recommend to other parents.',
+    avatar: '👨‍🔬'
+  },
+  {
+    name: 'Meera Balasubramanian',
+    location: 'Medavakkam, Chennai',
+    rating: 5,
+    text: 'Excellent pediatrician! Very caring and professional. My son feels comfortable during visits and Dr. Ramya explains everything in detail to help us understand.',
+    avatar: '👩‍🏫'
+  },
+  {
+    name: 'Rajesh Thangaraj',
+    location: 'Perumbakkam, Chennai',
+    rating: 4,
+    text: 'Dr. Ramya is knowledgeable and the treatment provided was effective. The clinic timings are convenient for working parents like us.',
+    avatar: '👨‍💻'
   },
 ];
 
@@ -125,7 +148,7 @@ export default function ResponsiveHomePage() {
   }
 
   return (
-    <ResponsiveLayout>
+    <>
       
       {/* Hero Section - Optimized for all devices */}
       <section className="relative min-h-mobile-screen lg:min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
@@ -156,7 +179,9 @@ export default function ResponsiveHomePage() {
                 
                 <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   Dr. R Ramya Bharathi - MBBS, DCH, DNB(PAED). 
-                  Dedicated pediatric care with sophisticated, evidence-based medicine for children 0-18 years.
+                  Experienced pediatrician with NICU expertise, corporate healthcare background, 
+                  and commitment to evidence-based medicine. Specialized in comprehensive child healthcare 
+                  with responsible antibiotic stewardship for children 0-18 years.
                 </p>
               </div>
 
@@ -240,7 +265,7 @@ export default function ResponsiveHomePage() {
               Comprehensive Pediatric Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From routine checkups to specialized care, we provide complete healthcare solutions for your child&apos;s growth and development.
+              From specialized care to developmental assessments, we provide complete healthcare solutions for your child&apos;s growth and development.
             </p>
           </div>
 
@@ -248,16 +273,17 @@ export default function ResponsiveHomePage() {
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div
+                <Link
                   key={service.title}
-                  className="group bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                  href={service.link}
+                  className="group bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="w-7 h-7 lg:w-8 lg:h-8 text-blue-600" />
                   </div>
                   
-                  <h3 className="text-xl lg:text-2xl font-serif font-semibold text-gray-900 mb-3">
+                  <h3 className="text-xl lg:text-2xl font-serif font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                     {service.title}
                   </h3>
                   
@@ -265,7 +291,7 @@ export default function ResponsiveHomePage() {
                     {service.desc}
                   </p>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-4">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center text-sm text-gray-500">
                         <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3" />
@@ -273,7 +299,12 @@ export default function ResponsiveHomePage() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                  
+                  <div className="flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-300">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </Link>
               );
             })}
           </div>
@@ -431,16 +462,16 @@ export default function ResponsiveHomePage() {
             </Link>
             
             <Link
-              href="tel:+91XXXXXXXXXX"
+              href="tel:+919363956784"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 hover:scale-105"
             >
               <Stethoscope className="w-5 h-5 mr-2" />
-              Call +91 XXXX XXXXXX
+              Call +91 9363956784
             </Link>
           </div>
         </div>
       </section>
 
-    </ResponsiveLayout>
+    </>
   );
 }

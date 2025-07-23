@@ -6,22 +6,21 @@ import { useState, useEffect } from 'react';
 
 const footerLinks = {
   services: [
-    { label: 'Health Checkups', href: '/services/checkups' },
+    { label: 'Developmental Assessment', href: '/services/developmental-assessment' },
     { label: 'Vaccinations', href: '/services/vaccinations' },
-    { label: 'Treatment Care', href: '/services/treatment' },
-    { label: 'Newborn Care', href: '/services/newborn' },
+    { label: 'Treatment Care', href: '/services/treatment-care' },
+    { label: 'Newborn Care', href: '/services/newborn-care' },
   ],
   resources: [
     { label: 'Health Articles', href: '/health-articles' },
-    { label: 'Vaccination Guide', href: '/health-articles/pediatric-vaccination-guidelines' },
-    { label: 'Emergency Care', href: '/health-articles/pediatric-emergency-poisoning-guide' },
-    { label: 'Child Development', href: '/health-articles/developmental-milestones-guide' },
+    { label: 'Vaccination Guide', href: '/health-articles/vaccination-guidelines' },
+    { label: 'Emergency Care', href: '/health-articles/emergency-signs' },
+    { label: 'Child Development', href: '/health-articles/developmental-milestones' },
   ],
   about: [
     { label: 'About Dr. Ramya', href: '/about' },
     { label: 'Clinic Information', href: '/contact' },
     { label: 'Appointment Booking', href: '/contact' },
-    { label: 'Insurance & Billing', href: '/insurance' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },
@@ -90,31 +89,34 @@ export default function ResponsiveFooter() {
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                  15+ years of dedicated pediatric care with sophisticated, evidence-based medicine. 
-                  Expert healthcare for children 0-18 years.
+                  Experienced pediatrician with NICU expertise and corporate healthcare background. 
+                  MBBS from Tirunelveli Medical College, DCH from Institute of Child Health Egmore, 
+                  DNB from St. Philomena Bangalore. Former NICU In-Charge at Govt Hosur Hospital 
+                  and Apollo Hospitals experience. Specializes in evidence-based medicine and 
+                  responsible antibiotic use for optimal child healthcare outcomes.
                 </p>
               </div>
 
               {/* Contact Information */}
               <div className="space-y-4">
                 <a 
-                  href="tel:+91XXXXXXXXXX" 
+                  href="tel:+919363956784" 
                   className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300 group"
                 >
                   <div className="w-8 h-8 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/30 transition-colors duration-300">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <span className="text-sm">+91 XXXX XXXXXX</span>
+                  <span className="text-sm">+91 9363956784</span>
                 </a>
                 
                 <a 
-                  href="mailto:drramya@example.com" 
+                  href="mailto:dr.ramyabharathi@gmail.com" 
                   className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300 group"
                 >
                   <div className="w-8 h-8 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/30 transition-colors duration-300">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <span className="text-sm">drramya@example.com</span>
+                  <span className="text-sm">dr.ramyabharathi@gmail.com</span>
                 </a>
                 
                 <div className="flex items-start space-x-3 text-gray-300">
@@ -122,8 +124,9 @@ export default function ResponsiveFooter() {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div className="text-sm">
-                    <div>Clinic Address Line 1</div>
-                    <div>City, State - 000000</div>
+                    <div>Newgen Speciality Clinics</div>
+                    <div>Plot No 16, Near Reliance Digital</div>
+                    <div>Rukumani Nagar, Perumbakkam-600100</div>
                   </div>
                 </div>
                 
@@ -132,7 +135,7 @@ export default function ResponsiveFooter() {
                     <Clock className="w-4 h-4" />
                   </div>
                   <div className="text-sm">
-                    <div>Mon-Sat: 9:00 AM - 7:00 PM</div>
+                    <div>Mon-Sat: 5:30 PM - 8:30 PM</div>
                     <div className="text-gray-400">Sun: Emergency Only</div>
                   </div>
                 </div>

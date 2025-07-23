@@ -401,23 +401,6 @@ Vaccination is one of the most successful and cost-effective public health inter
 9. **Consult healthcare providers** - For individual risk assessment and recommendations
 10. **Stay informed** - Vaccination recommendations evolve with new research and disease patterns
 
-## Emergency Contact Information
-
-**For Vaccination-Related Concerns:**
-- **Dr. R Ramya Bharathi Clinic:** +91-XXXXXXXXXX
-- **Online Consultation:** [Your telemedicine platform]
-- **Clinic Address:** [Your clinic address]
-
-**Government Vaccination Centers:**
-- **District Health Office:** [Local district number]
-- **Primary Health Center:** [Local PHC number]
-- **Helpline:** 104 (Health Helpline)
-
-**For Medical Emergencies:**
-- **Emergency Services:** 102/108
-- **Poison Control:** 1066
-- **Nearest Pediatric Emergency Room:** [Your local hospital]
-
 ## References & Sources
 
 ### 1. Government of India Programs & Guidelines
