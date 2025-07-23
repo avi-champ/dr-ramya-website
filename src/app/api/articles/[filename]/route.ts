@@ -31,7 +31,7 @@ export async function GET(
           'Cache-Control': 'public, max-age=3600' // Cache for 1 hour
         }
       });
-    } catch (fileError) {
+    } catch {
       console.log(`Markdown file not found: ${cleanFilename}`);
       return NextResponse.json({ error: 'File not found' }, { status: 404 });
     }

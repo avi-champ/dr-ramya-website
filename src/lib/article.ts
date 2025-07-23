@@ -4,8 +4,8 @@
 import yaml from 'js-yaml';
 
 // Only import fs and path on server side
-let fs: any = null;
-let path: any = null;
+let fs: typeof import('fs') | null = null;
+let path: typeof import('path') | null = null;
 
 if (typeof window === 'undefined') {
   // Server-side imports
@@ -380,7 +380,7 @@ function markdownToHtml(markdown: string): string {
 }
 
 // Enhanced frontmatter parser
-function parseFrontmatter(content: string): { frontmatter: any; content: string } {
+function parseFrontmatter(content: string): { frontmatter: Record<string, unknown>; content: string } {
   const frontmatterRegex = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n([\s\S]*)$/;
   const match = content.match(frontmatterRegex);
   

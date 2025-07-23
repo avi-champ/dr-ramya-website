@@ -54,7 +54,7 @@ const articleFileMap: { [key: string]: string } = {
 };
 
 // Enhanced frontmatter parser
-function parseFrontmatter(content: string): { frontmatter: Record<string, any>; content: string } {
+function parseFrontmatter(content: string): { frontmatter: Record<string, unknown>; content: string } {
   const frontmatterRegex = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n([\s\S]*)$/;
   const match = content.match(frontmatterRegex);
   
@@ -66,7 +66,7 @@ function parseFrontmatter(content: string): { frontmatter: Record<string, any>; 
   const markdownContent = match[2];
   
   try {
-    const frontmatter = yaml.load(frontmatterText) as Record<string, any>;
+    const frontmatter = yaml.load(frontmatterText) as Record<string, unknown>;
     return { frontmatter: frontmatter || {}, content: markdownContent };
   } catch (error) {
     console.error('YAML parsing error:', error);
@@ -141,24 +141,29 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
       const markdownContent = readFileSync(filePath, 'utf8');
       const { frontmatter, content } = parseFrontmatter(markdownContent);
       
+      // Type-safe frontmatter access
+      const getFrontmatterValue = <T>(key: string, defaultValue: T): T => {
+        return (frontmatter[key] as T) ?? defaultValue;
+      };
+      
       const article: Article = {
-        id: frontmatter.id || slug,
-        title: frontmatter.title || 'Article Title',
-        description: frontmatter.description || 'Article description',
+        id: getFrontmatterValue('id', slug),
+        title: getFrontmatterValue('title', 'Article Title'),
+        description: getFrontmatterValue('description', 'Article description'),
         content: content,
         htmlContent: markdownToHtml(content),
-        category: frontmatter.category || 'Common Conditions',
-        tags: frontmatter.tags || [],
-        readingTime: frontmatter.readingTime || 5,
-        publishDate: frontmatter.publishDate || new Date().toISOString().split('T')[0],
-        lastUpdated: frontmatter.lastUpdated || frontmatter.publishDate || new Date().toISOString().split('T')[0],
-        ageGroup: frontmatter.ageGroup || 'All Ages',
-        severity: frontmatter.severity || 'Low',
-        iapSources: frontmatter.evidenceBasedSources || frontmatter.iapSources || [],
-        featured: frontmatter.featured || false,
-        slug: frontmatter.slug || slug,
-        author: frontmatter.author || 'Dr. R Ramya Bharathi',
-        views: frontmatter.views || 0
+        category: getFrontmatterValue('category', 'Common Conditions' as Article['category']),
+        tags: getFrontmatterValue('tags', [] as string[]),
+        readingTime: getFrontmatterValue('readingTime', 5),
+        publishDate: getFrontmatterValue('publishDate', new Date().toISOString().split('T')[0]),
+        lastUpdated: getFrontmatterValue('lastUpdated', getFrontmatterValue('publishDate', new Date().toISOString().split('T')[0])),
+        ageGroup: getFrontmatterValue('ageGroup', 'All Ages' as Article['ageGroup']),
+        severity: getFrontmatterValue('severity', 'Low' as Article['severity']),
+        iapSources: getFrontmatterValue('evidenceBasedSources', getFrontmatterValue('iapSources', [] as Article['iapSources'])),
+        featured: getFrontmatterValue('featured', false),
+        slug: getFrontmatterValue('slug', slug),
+        author: getFrontmatterValue('author', 'Dr. R Ramya Bharathi'),
+        views: getFrontmatterValue('views', 0)
       };
       
       return article;
