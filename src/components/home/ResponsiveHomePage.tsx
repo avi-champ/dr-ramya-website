@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { BookOpen, ArrowRight, Star, Clock, ExternalLink, Users, Award, Calendar, Heart, Shield, Baby, Stethoscope } from 'lucide-react';
+import { BookOpen, ArrowRight, Star, Clock, ExternalLink, Users, Award, Calendar, Heart, Shield, Baby, Stethoscope, Share2 } from 'lucide-react';
 import Link from 'next/link';
 
 // Optimized for all devices - mobile, tablet, laptop
@@ -117,6 +117,43 @@ const getCategoryColor = (category: string) => {
   }
 };
 
+// Simple Social Sharing Component
+const SocialSharing = () => {
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://drramya-paediatrics.vercel.app';
+  const shareText = 'Expert pediatric care by Dr. R Ramya Bharathi - 15+ years experience in child healthcare';
+
+  const handleNativeShare = async () => {
+    if (typeof window !== 'undefined' && 'share' in navigator) {
+      try {
+        await navigator.share({
+          title: 'Dr. R Ramya Bharathi - Pediatrician',
+          text: shareText,
+          url: shareUrl,
+        });
+      } catch (error) {
+        console.log('Error sharing:', error);
+      }
+    } else {
+      // Fallback to WhatsApp share
+      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+      window.open(whatsappUrl, '_blank', 'width=600,height=400');
+    }
+  };
+
+  return (
+    <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
+      <button
+        onClick={handleNativeShare}
+        className="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
+        aria-label="Share this page"
+        title="Share"
+      >
+        <Share2 className="w-5 h-5" />
+      </button>
+    </div>
+  );
+};
+
 export default function ResponsiveHomePage() {
   const [mounted, setMounted] = useState(false);
   const [featuredArticles, setFeaturedArticles] = useState<Article[]>([]);
@@ -150,6 +187,9 @@ export default function ResponsiveHomePage() {
   return (
     <>
       
+      {/* Simple Social Sharing */}
+      <SocialSharing />
+      
       {/* Hero Section - Optimized for all devices */}
       <section className="relative min-h-mobile-screen lg:min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
         {/* Background Elements */}
@@ -177,12 +217,19 @@ export default function ResponsiveHomePage() {
                   </span>
                 </h1>
                 
-                <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Dr. R Ramya Bharathi - MBBS, DCH, DNB(PAED). 
-                  Experienced pediatrician with NICU expertise, corporate healthcare background, 
-                  and commitment to evidence-based medicine. Specialized in comprehensive child healthcare 
-                  with responsible antibiotic stewardship for children 0-18 years.
-                </p>
+                <div className="space-y-4 mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0">
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed text-justify">
+                    Dr. R Ramya Bharathi - MBBS, DCH, DNB(PAED). 
+                    Experienced pediatrician with 15+ years of dedicated experience and NICU expertise, 
+                    committed to evidence-based medicine for children aged 0-18 years.
+                  </p>
+                  
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-justify">
+                    Our practice follows the latest <a href="https://www.iapindia.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">pediatric guidelines</a>, 
+                    providing comprehensive healthcare including preventive care, developmental assessments, 
+                    vaccination programs, and specialized treatments with personalized care plans.
+                  </p>
+                </div>
               </div>
 
               {/* CTA Buttons */}
@@ -264,7 +311,7 @@ export default function ResponsiveHomePage() {
             <h2 className="text-mobile-h2 sm:text-tablet-h2 lg:text-desktop-h2 font-serif font-bold text-gray-900 mb-4">
               Comprehensive Pediatric Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
               From specialized care to developmental assessments, we provide complete healthcare solutions for your child&apos;s growth and development.
             </p>
           </div>
@@ -287,7 +334,7 @@ export default function ResponsiveHomePage() {
                     {service.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-600 mb-4 leading-relaxed text-justify">
                     {service.desc}
                   </p>
                   
@@ -312,13 +359,13 @@ export default function ResponsiveHomePage() {
       </section>
 
       {/* Featured Articles Section */}
-      <section className="py-mobile-section md:py-tablet-section lg:py-desktop-section bg-gray-50">
+      <section className="py-mobile-section md:py-tablet-section lg:py-desktop-section bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-mobile-h2 sm:text-tablet-h2 lg:text-desktop-h2 font-serif font-bold text-gray-900 mb-4">
               Latest Health Articles
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
               Evidence-based health information and parenting guidance from our pediatric experts.
             </p>
           </div>
@@ -391,14 +438,14 @@ export default function ResponsiveHomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-mobile-section md:py-tablet-section lg:py-desktop-section bg-white">
+      <section className="py-mobile-section md:py-tablet-section lg:py-desktop-section bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-mobile-h2 sm:text-tablet-h2 lg:text-desktop-h2 font-serif font-bold text-gray-900 mb-4">
               What Parents Say
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Trusted by thousands of families across India for exceptional pediatric care.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
+              Trusted by families for exceptional pediatric care.
             </p>
           </div>
 
@@ -425,7 +472,7 @@ export default function ResponsiveHomePage() {
                   ))}
                 </div>
                 
-                <p className="text-gray-700 leading-relaxed italic">
+                <p className="text-gray-700 leading-relaxed italic text-justify">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
               </div>
@@ -447,7 +494,7 @@ export default function ResponsiveHomePage() {
           <h2 className="text-mobile-h2 sm:text-tablet-h2 lg:text-desktop-h2 font-serif font-bold mb-6">
             Ready to Give Your Child the Best Care?
           </h2>
-          <p className="text-lg lg:text-xl mb-8 lg:mb-10 opacity-90 max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl mb-8 lg:mb-10 opacity-90 max-w-3xl mx-auto text-justify">
             Schedule an appointment today and experience compassionate, expert pediatric care 
             that puts your child&apos;s health and happiness first.
           </p>

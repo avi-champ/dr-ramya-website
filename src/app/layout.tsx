@@ -19,7 +19,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Dr. R Ramya Bharathi - Paediatrician | Expert Child Care',
-  description: 'Dr. R Ramya Bharathi - MBBS (Tirunelveli Medical College), DCH (Institute of Child Health Egmore), DNB (St. Philomena Bangalore). NICU specialist with Apollo Hospitals experience. Expert in evidence-based pediatric care and responsible antibiotic use for children 0-18 years.',
+  description: 'Dr. R Ramya Bharathi - Expert pediatrician with 15+ years experience. MBBS, DCH, DNB qualified. NICU specialist offering evidence-based care for children 0-18 years.',
   keywords: 'pediatrician, paediatrician, child doctor, baby doctor, vaccination, child health, Dr Ramya Bharathi, NICU specialist, Apollo Hospitals, evidence-based medicine, antibiotic stewardship, expert pediatric care, children healthcare',
   authors: [{ name: 'Dr. R Ramya Bharathi' }],
   openGraph: {
@@ -37,6 +37,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://drramya-paediatrics.vercel.app',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.svg', sizes: '180x180', type: 'image/svg+xml' },
+    ],
+  },
+  manifest: '/manifest.json',
 }
 
 export const viewport: Viewport = {
