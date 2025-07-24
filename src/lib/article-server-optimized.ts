@@ -180,7 +180,7 @@ export async function getArticleBySlugOptimized(slug: string, includeContent = f
         iapSources: getFrontmatterValue('evidenceBasedSources', getFrontmatterValue('iapSources', [] as Article['iapSources'])),
         featured: getFrontmatterValue('featured', false),
         slug: getFrontmatterValue('slug', slug),
-        author: getFrontmatterValue('author', 'Dr. R Ramya Bharathi'),
+        author: getFrontmatterValue('author', 'Dr. Ramya Bharathi R'),
         views: getFrontmatterValue('views', 0)
       };
 

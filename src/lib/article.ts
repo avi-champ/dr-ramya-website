@@ -194,7 +194,7 @@ Fever is one of the most common reasons parents seek medical attention for their
     severity: 'Medium',
     featured: true,
     slug: 'fever-in-children-guide',
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 1547,
     iapSources: [
       {
@@ -258,7 +258,7 @@ The Indian Academy of Pediatrics (IAP) provides comprehensive vaccination guidel
     severity: 'Low',
     featured: true,
     slug: 'vaccination-guidelines-iap',
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 982,
     iapSources: [
       {
@@ -311,7 +311,7 @@ The common cold is a viral infection of the upper respiratory tract. Children ty
     severity: 'Low',
     featured: false,
     slug: 'common-cold-treatment',
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 756,
     iapSources: [
       {
@@ -440,7 +440,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
           iapSources: frontmatter.iapSources || [],
           featured: frontmatter.featured || false,
           slug: frontmatter.slug || slug,
-          author: frontmatter.author || 'Dr. R Ramya Bharathi',
+          author: frontmatter.author || 'Dr. Ramya Bharathi R',
           views: frontmatter.views || 0
         };
         

@@ -10,7 +10,7 @@ ageGroup: "0-18 years"
 severity: "Essential"
 featured: true
 slug: "child-nutrition-complete-guide"
-author: "Dr. R Ramya Bharathi"
+author: "Dr. Ramya Bharathi R"
 evidenceBasedSources:
   - title: "WHO Guideline for Complementary Feeding of Infants and Young Children 6-23 Months"
     url: "https://www.who.int/publications/i/item/9789240081864"

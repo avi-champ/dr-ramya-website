@@ -81,7 +81,7 @@ export default function ResponsiveFooter() {
                   </div>
                   <div>
                     <div className="font-serif font-semibold text-lg">
-                      Dr. R Ramya Bharathi
+                      Dr. Ramya Bharathi R
                     </div>
                     <div className="text-sm text-gray-400">
                       MBBS, DCH, DNB(PAED)
@@ -232,7 +232,7 @@ export default function ResponsiveFooter() {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-center md:text-left">
                 <p className="text-gray-400 text-sm">
-                  © {new Date().getFullYear()} Dr. R Ramya Bharathi. All rights reserved.
+                  © {new Date().getFullYear()} Dr. Ramya Bharathi R. All rights reserved.
                 </p>
                 <p className="text-gray-500 text-xs mt-1">
                   Medical information is for educational purposes only. Always consult your physician.

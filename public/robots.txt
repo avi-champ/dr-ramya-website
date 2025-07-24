@@ -1,0 +1,22 @@
+# Robots.txt for Dr. R Ramya Bharathi - Pediatrician Website
+
+User-agent: *
+Allow: /
+
+# Important pages to crawl
+Allow: /health-articles/
+Allow: /services/
+Allow: /contact/
+Allow: /about/
+
+# Prevent crawling of private/admin areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: *.json$
+
+# Sitemap location
+Sitemap: https://drramya-paediatrics.vercel.app/sitemap.xml
+
+# Crawl delay (optional - be respectful to search engines)
+Crawl-delay: 1

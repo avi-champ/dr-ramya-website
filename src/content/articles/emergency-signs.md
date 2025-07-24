@@ -10,7 +10,7 @@ ageGroup: "All Ages"
 severity: "High"
 featured: true
 slug: "pediatric-emergency-poisoning-guide"
-author: "Dr. R Ramya Bharathi"
+author: "Dr. Ramya Bharathi R"
 emergencySources:
   - title: "AAP Clinical Practice Guidelines & Policies 25th Edition"
     url: "https://www.aap.org/Pediatric-Clinical-Practice-Guidelines-Policies-25th-Edition-Paperback"

@@ -107,7 +107,7 @@ export default function ResponsiveNavigation() {
               </div>
               <div className="hidden sm:block">
                 <div className="font-serif font-semibold text-lg md:text-xl text-gray-900">
-                  Dr. R Ramya Bharathi
+                  Dr. Ramya Bharathi R
                 </div>
                 <div className="text-xs md:text-sm text-gray-600 -mt-1">
                   Paediatrician
@@ -204,7 +204,7 @@ export default function ResponsiveNavigation() {
           <div className="flex items-center justify-between p-6 border-b border-gray-200">
             <div>
               <div className="font-serif font-semibold text-lg text-gray-900">
-                Dr. R Ramya Bharathi
+                Dr. Ramya Bharathi R
               </div>
               <div className="text-sm text-gray-600">
                 Paediatrician

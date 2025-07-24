@@ -38,7 +38,7 @@ export const articlesData: Article[] = [
     severity: 'Medium',
     featured: true,
     slug: 'fever-in-children-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 1547
   },
   {
@@ -54,7 +54,7 @@ export const articlesData: Article[] = [
     severity: 'Low',
     featured: true,
     slug: 'pediatric-vaccination-guidelines', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 982
   },
   {
@@ -70,7 +70,7 @@ export const articlesData: Article[] = [
     severity: 'Low',
     featured: true,
     slug: 'common-cold-treatment',
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 756
   },
   {
@@ -86,7 +86,7 @@ export const articlesData: Article[] = [
     severity: 'Low',
     featured: true,
     slug: 'developmental-milestones-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 1423
   },
   {
@@ -102,7 +102,7 @@ export const articlesData: Article[] = [
     severity: 'Medium',
     featured: false,
     slug: 'childhood-allergies-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 892
   },
   {
@@ -118,7 +118,7 @@ export const articlesData: Article[] = [
     severity: 'Medium',
     featured: false,
     slug: 'diarrhea-management-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 645
   },
   {
@@ -134,7 +134,7 @@ export const articlesData: Article[] = [
     severity: 'Emergency',
     featured: false,
     slug: 'pediatric-emergency-poisoning-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 1234
   },
   {
@@ -150,7 +150,7 @@ export const articlesData: Article[] = [
     severity: 'Low',
     featured: false,
     slug: 'newborn-care-complete-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 2156
   },
   {
@@ -166,7 +166,7 @@ export const articlesData: Article[] = [
     severity: 'Low',
     featured: false,
     slug: 'child-nutrition-complete-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 987
   },
   {
@@ -182,7 +182,7 @@ export const articlesData: Article[] = [
     severity: 'Low',
     featured: false,
     slug: 'pediatric-sleep-patterns-guide', // ✅ Match frontmatter slug
-    author: 'Dr. R Ramya Bharathi',
+    author: 'Dr. Ramya Bharathi R',
     views: 1098
   }
 ];

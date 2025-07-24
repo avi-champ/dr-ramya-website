@@ -10,7 +10,7 @@ ageGroup: "All Ages"
 severity: "High Priority"
 featured: false
 slug: "pediatric-sleep-patterns-guide"
-author: "Dr. R Ramya Bharathi"
+author: "Dr. Ramya Bharathi R"
 evidenceBasedSources:
   - title: "Recommended Amount of Sleep for Pediatric Populations: AASM Consensus Statement"
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4877308/"

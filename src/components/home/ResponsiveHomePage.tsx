@@ -3,36 +3,39 @@
 import { useState, useEffect } from 'react';
 import { BookOpen, ArrowRight, Star, Clock, ExternalLink, Users, Award, Calendar, Heart, Shield, Baby, Stethoscope, Share2 } from 'lucide-react';
 import Link from 'next/link';
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
+import StructuredData from '@/components/seo/StructuredData';
+import GoogleMyBusinessOptimization from '@/components/seo/GoogleMyBusinessOptimization';
 
 // Optimized for all devices - mobile, tablet, laptop
 const services = [
   {
+    icon: Stethoscope,
+    title: 'Child Development Assessment',
+    desc: 'Comprehensive child development assessment including autism screening, ADHD assessment, speech delay evaluation, and behavioral evaluations',
+    features: ['Autism Screening', 'ADHD Assessment', 'Speech Delay Evaluation'],
+    link: '/health-articles/developmental-milestones',
+  },
+  {
     icon: Shield,
-    title: 'Vaccinations',
-    desc: 'Complete immunization programs following latest pediatric guidelines',
+    title: 'Childhood Illness Management',
+    desc: 'Expert treatment for common childhood illnesses including allergies, cold, fever, and emergency care with personalized treatment plans',
+    features: ['Allergy Treatment', 'Cold & Fever Care', 'Emergency Response'],
+    link: '/health-articles/fever-in-children',
+  },
+  {
+    icon: Heart,
+    title: 'Vaccination Services',
+    desc: 'Complete vaccination programs in Perumbakkam following IAP schedule and government guidelines with specialized care',
     features: ['IAP Schedule', 'Government UIP', 'Travel Vaccines'],
     link: '/health-articles/vaccination-guidelines',
   },
   {
-    icon: Heart,
-    title: 'Treatment Care',
-    desc: 'Expert treatment for childhood illnesses and medical conditions',
-    features: ['Acute Care', 'Chronic Conditions', 'Emergency Consultation'],
-    link: '/health-articles/fever-in-children',
-  },
-  {
     icon: Baby,
-    title: 'Newborn Care',
-    desc: 'Specialized care for babies including feeding support and development',
-    features: ['Feeding Support', 'Sleep Guidance', 'Development Tracking'],
+    title: 'Pediatric Care & NICU',
+    desc: 'Expert pediatric care services including newborn care, NICU expertise, and general pediatric treatments for children',
+    features: ['Newborn Care', 'NICU Expertise', 'General Pediatrics'],
     link: '/health-articles/newborn-care',
-  },
-  {
-    icon: Stethoscope,
-    title: 'Child Developmental Assessment',
-    desc: 'Comprehensive monitoring of growth milestones and developmental progress',
-    features: ['Growth Tracking', 'Milestone Assessment', 'Behavioral Evaluation'],
-    link: '/health-articles/developmental-milestones',
   },
 ];
 
@@ -120,13 +123,13 @@ const getCategoryColor = (category: string) => {
 // Simple Social Sharing Component
 const SocialSharing = () => {
   const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://drramya-paediatrics.vercel.app';
-  const shareText = 'Expert pediatric care by Dr. R Ramya Bharathi - 15+ years experience in child healthcare';
+  const shareText = 'Expert pediatric care by Dr. Ramya Bharathi R - 15+ years experience in child healthcare';
 
   const handleNativeShare = async () => {
     if (typeof window !== 'undefined' && 'share' in navigator) {
       try {
         await navigator.share({
-          title: 'Dr. R Ramya Bharathi - Pediatrician',
+          title: 'Dr. Ramya Bharathi R - Pediatrician',
           text: shareText,
           url: shareUrl,
         });
@@ -186,6 +189,11 @@ export default function ResponsiveHomePage() {
 
   return (
     <>
+      {/* SEO Structured Data */}
+      <LocalBusinessSchema />
+      <StructuredData type="organization" />
+      <StructuredData type="person" />
+      <GoogleMyBusinessOptimization />
       
       {/* Simple Social Sharing */}
       <SocialSharing />
@@ -207,27 +215,30 @@ export default function ResponsiveHomePage() {
               <div className="mb-6 lg:mb-8">
                 <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6">
                   <Star className="w-4 h-4 mr-2 text-blue-600" />
-                  15+ Years of Pediatric Excellence
+                  Child Development Assessment Specialist | Pediatrician | Vaccination
                 </div>
                 
                 <h1 className="text-mobile-h1 sm:text-tablet-h1 lg:text-desktop-h1 xl:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight">
-                  Expert Care for Your{' '}
+                  Dr. Ramya Bharathi R {' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                    Little Ones
+                    Pediatrician
                   </span>
                 </h1>
                 
+                <div className="mb-6">
+                  <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800 mb-4">
+                    Child Development Assessment Specialist in Perumbakkam | Expert Pediatric Care
+                  </h2>
+                </div>
+                
                 <div className="space-y-4 mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0">
                   <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed text-justify">
-                    Dr. R Ramya Bharathi - MBBS, DCH, DNB(PAED). 
-                    Experienced pediatrician with 15+ years of dedicated experience and NICU expertise, 
-                    committed to evidence-based medicine for children aged 0-18 years.
+                    Dr. Ramya Bharathi R - Leading <strong>pediatrician in Perumbakkam</strong> specializing in 
+                    <strong> child development assessment</strong>, behavioral pediatrics, and comprehensive evaluations. 
+                    MBBS, DCH, DNB(PAED) qualified with 15+ years of expertise in pediatric care and NICU care.
                   </p>
-                  
-                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-justify">
-                    Our practice follows the latest <a href="https://www.iapindia.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">pediatric guidelines</a>, 
-                    providing comprehensive healthcare including preventive care, developmental assessments, 
-                    vaccination programs, and specialized treatments with personalized care plans.
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed text-justify">
+                    Dr. Ramya Bharathi R is committed to providing personalized and compassionate care to her young patients and their families.
                   </p>
                 </div>
               </div>
@@ -309,10 +320,11 @@ export default function ResponsiveHomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-mobile-h2 sm:text-tablet-h2 lg:text-desktop-h2 font-serif font-bold text-gray-900 mb-4">
-              Comprehensive Pediatric Services
+              Specialized Developmental Paediatrics Services in Perumbakkam
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
-              From specialized care to developmental assessments, we provide complete healthcare solutions for your child&apos;s growth and development.
+              Dr. Ramya Bharathi R offers expert <strong>developmental paediatrics</strong>, comprehensive 
+              <strong> child development assessment</strong>, vaccination services, and specialized children&apos;s treatments in Chennai.
             </p>
           </div>
 
@@ -442,10 +454,10 @@ export default function ResponsiveHomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-mobile-h2 sm:text-tablet-h2 lg:text-desktop-h2 font-serif font-bold text-gray-900 mb-4">
-              What Parents Say
+              What Parents Say About Our Developmental Paediatrics Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
-              Trusted by families for exceptional pediatric care.
+              Trusted by families across Chennai for exceptional developmental paediatrics, child development assessment, and specialized pediatric care.
             </p>
           </div>
 
@@ -492,11 +504,11 @@ export default function ResponsiveHomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-mobile-h2 sm:text-tablet-h2 lg:text-desktop-h2 font-serif font-bold mb-6">
-            Ready to Give Your Child the Best Care?
+            Book Consultation with Developmental Paediatrician
           </h2>
           <p className="text-lg lg:text-xl mb-8 lg:mb-10 opacity-90 max-w-3xl mx-auto text-justify">
-            Schedule an appointment today and experience compassionate, expert pediatric care 
-            that puts your child&apos;s health and happiness first.
+            Schedule your child&apos;s developmental assessment today with leading <strong>developmental paediatrician Dr. Ramya Bharathi R</strong>. 
+            Expert <strong>child development assessment</strong>, autism screening, ADHD evaluation, and comprehensive pediatric care in Perumbakkam, Chennai.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

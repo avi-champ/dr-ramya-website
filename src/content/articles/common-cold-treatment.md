@@ -10,7 +10,7 @@ ageGroup: "All Ages"
 severity: "Low"
 featured: false
 slug: "common-cold-treatment"
-author: "Dr. R Ramya Bharathi"
+author: "Dr. Ramya Bharathi R"
 workingSources:
   - title: "CDC - Managing Common Cold Symptoms"
     url: "https://www.cdc.gov/common-cold/treatment/index.html"

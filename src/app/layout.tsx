@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import ResponsiveLayout from '@/components/layout/ResponsiveLayout'
+import { SEOReportComponent } from '@/components/seo'
 
 const playfairDisplay = Playfair_Display({ 
   subsets: ['latin'], 
@@ -18,24 +19,47 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Dr. R Ramya Bharathi - Paediatrician | Expert Child Care',
-  description: 'Dr. R Ramya Bharathi - Expert pediatrician with 15+ years experience. MBBS, DCH, DNB qualified. NICU specialist offering evidence-based care for children 0-18 years.',
-  keywords: 'pediatrician, paediatrician, child doctor, baby doctor, vaccination, child health, Dr Ramya Bharathi, NICU specialist, Apollo Hospitals, evidence-based medicine, antibiotic stewardship, expert pediatric care, children healthcare',
-  authors: [{ name: 'Dr. R Ramya Bharathi' }],
+  metadataBase: new URL('https://drramya-paediatrics.vercel.app'),
+  title: 'Dr. Ramya Bharathi R | Child Development Assessment Specialist in Perumbakkam | Pediatrician',
+  description: 'Dr. Ramya Bharathi R | Pediatrician in Perumbakkam specializing in child development assessment, behavioral pediatrics, and comprehensive evaluations. MBBS, DCH, DNB(PAED) qualified with 15+ years of expertise in pediatric care and NICU care.',
+  keywords: 'Dr Ramya Bharathi, pediatrician Perumbakkam, child development assessment Chennai, behavioral pediatrics, autism screening, ADHD assessment, speech delay evaluation, motor development, cognitive assessment, MBBS DCH DNB PAED, NICU specialist, vaccination Perumbakkam, children specialist Chennai, child evaluations, evidence-based pediatric care, children healthcare Chennai, baby doctor Sholinganallur',
+  authors: [{ name: 'Dr. Ramya Bharathi R' }],
   openGraph: {
-    title: 'Dr. R Ramya Bharathi - Expert Pediatric Care',
-    description: '15+ years of dedicated pediatric care with sophisticated, evidence-based medicine',
+    title: 'Dr. Ramya Bharathi R | Child Development Assessment Specialist in Perumbakkam',
+    description: 'Expert in autism screening, ADHD assessment, speech delay evaluation, motor development, and cognitive assessments. Comprehensive vaccination services and children\'s specialist treatments with evidence-based pediatric care.',
     type: 'website',
     locale: 'en_US',
+    siteName: 'Dr. Ramya Bharathi R - Developmental Paediatrician',
+    images: [
+      {
+        url: '/apple-touch-icon.png',
+        width: 180,
+        height: 180,
+        alt: 'Dr. Ramya Bharathi R - Developmental Paediatrician in Perumbakkam | Best Child Care | Vaccination',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dr. R Ramya Bharathi - Paediatrician',
-    description: 'Expert pediatric care for children 0-18 years',
+    title: 'Dr. Ramya Bharathi R | Child Development Assessment Specialist in Perumbakkam',
+    description: 'Expert in autism screening, ADHD assessment, speech delay evaluation, motor development, and cognitive assessments. Comprehensive vaccination services and children\'s specialist treatments.',
   },
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drramya-paediatrics.vercel.app',
+  },
+  verification: {
+    google: 'your-google-verification-code', // To be added when available
   },
   icons: {
     icon: [
@@ -46,6 +70,7 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/manifest.json',
+  category: 'Healthcare',
 }
 
 export const viewport: Viewport = {
@@ -72,6 +97,7 @@ export default function RootLayout({
         <ResponsiveLayout>
           {children}
         </ResponsiveLayout>
+        <SEOReportComponent />
       </body>
     </html>
   )

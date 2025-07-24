@@ -10,7 +10,7 @@ ageGroup: "All Ages"
 severity: "High Priority"
 featured: true
 slug: "pediatric-vaccination-guidelines"
-author: "Dr. R Ramya Bharathi"
+author: "Dr. Ramya Bharathi R"
 evidenceBasedSources:
   - title: "Universal Immunization Programme - National Health Mission"
     url: "https://nhm.gov.in/index1.php?lang=1&level=2&sublinkid=824&lid=220"

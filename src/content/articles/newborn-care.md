@@ -10,7 +10,7 @@ ageGroup: "Newborns (0-28 days)"
 severity: "High"
 featured: false
 slug: "newborn-care-complete-guide"
-author: "Dr. R Ramya Bharathi"
+author: "Dr. Ramya Bharathi R"
 iapSources:
   - title: "WHO Essential Newborn Care Guidelines"
     url: "https://www.who.int/teams/maternal-newborn-child-adolescent-health-and-ageing/newborn-health/essential-newborn-care"

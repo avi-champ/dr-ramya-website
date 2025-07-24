@@ -10,7 +10,7 @@ ageGroup: "All Ages"
 severity: "Medium"
 featured: true
 slug: "fever-in-children-guide"
-author: "Dr. R Ramya Bharathi"
+author: "Dr. Ramya Bharathi R"
 iapSources:
   - title: "IAP Guidelines on Fever Management in Children"
     url: "https://iapindia.org/pdf/IAP-Guidelines-for-Fever.pdf"
