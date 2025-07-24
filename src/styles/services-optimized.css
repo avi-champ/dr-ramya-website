@@ -1,0 +1,96 @@
+/* Services Page Specific Optimizations */
+
+/* Optimized animations with will-change for better GPU acceleration */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.6s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+/* Optimized hover effects */
+.service-card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Critical above-the-fold styles */
+.hero-gradient {
+  background: linear-gradient(135deg, 
+    rgb(239, 246, 255) 0%, 
+    rgb(255, 255, 255) 35%, 
+    rgb(250, 245, 255) 100%);
+}
+
+/* Optimized loading states */
+.skeleton-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Font optimization for LCP */
+.font-serif-optimized {
+  font-family: 'Playfair Display', serif;
+  font-display: swap;
+}
+
+.font-sans-optimized {
+  font-family: 'Inter', sans-serif;
+  font-display: swap;
+}
+
+/* Contain layout shifts */
+.service-icon-container {
+  contain: layout;
+}
+
+/* Optimized focus states for accessibility */
+.focus-ring {
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Critical path CSS for immediate rendering */
+.critical-path {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Lazy loading optimizations */
+.lazy-load {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px;
+}

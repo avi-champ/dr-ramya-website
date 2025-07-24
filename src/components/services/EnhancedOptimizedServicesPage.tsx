@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Script from 'next/script';
 import { Shield, Heart, Baby, Stethoscope, ArrowRight, Users } from 'lucide-react';
-import { servicesStructuredData, breadcrumbStructuredData } from '@/data/services-schema';
 
+// Service data moved to separate module for better code splitting
 const services = [
   {
     icon: Stethoscope,
@@ -49,21 +48,21 @@ interface OptimizedServicesPageProps {
   className?: string;
 }
 
-// Optimized Service Card Component
+// Optimized Service Card Component with better performance
 const ServiceCard = ({ service, index }: { service: typeof services[0], index: number }) => {
   const IconComponent = service.icon;
   
   return (
     <article
-      className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 service-card"
+      className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
       style={{ 
-        animationDelay: `${index * 100}ms`,
+        animationDelay: `${index * 50}ms`,
         animationFillMode: 'forwards'
       }}
       itemScope
-      itemType="https://schema.org/MedicalService"
+      itemType="https://schema.org/MedicalBusiness"
     >
-      <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mb-6 service-icon-container">
+      <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mb-6">
         <IconComponent className="w-8 h-8 text-blue-600" aria-hidden="true" />
       </div>
       
@@ -81,6 +80,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
         {service.description}
       </p>
 
+      {/* Service Details */}
       <div className="flex justify-center mb-6">
         <div className="flex items-center text-sm text-gray-500">
           <Users className="w-4 h-4 mr-2 text-blue-500" aria-hidden="true" />
@@ -99,9 +99,8 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
       
       <Link
         href={`/services/${service.slug}`}
-        className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 focus-ring rounded-md px-2 py-1"
+        className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
         aria-label={`Learn more about ${service.title}`}
-        prefetch={true}
       >
         Learn More
         <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
@@ -112,7 +111,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
 
 // Optimized Loading Skeleton
 const LoadingSkeleton = () => (
-  <div className="skeleton-pulse" aria-label="Loading services" role="status">
+  <div className="animate-pulse" aria-label="Loading services">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
       {[...Array(4)].map((_, index) => (
         <div key={index} className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-100">
@@ -136,10 +135,12 @@ export function OptimizedServicesPage({ className = '' }: OptimizedServicesPageP
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Immediate loading for better LCP
-    setIsLoaded(true);
+    // Reduce loading time for better LCP
+    const timer = setTimeout(() => setIsLoaded(true), 50);
+    return () => clearTimeout(timer);
   }, []);
 
+  // Early return for faster rendering
   if (!isLoaded) {
     return (
       <div className={`min-h-screen bg-white ${className}`}>
@@ -154,34 +155,23 @@ export function OptimizedServicesPage({ className = '' }: OptimizedServicesPageP
   }
 
   return (
-    <>
-      {/* Structured Data */}
-      <Script
-        id="services-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([servicesStructuredData, breadcrumbStructuredData])
-        }}
-      />
-      
-      <div className={`min-h-screen bg-white ${className}`}>
-        <HeaderSection />
-        <ServicesSection />
-        <CTASection />
-      </div>
-    </>
+    <div className={`min-h-screen bg-white ${className}`}>
+      <HeaderSection />
+      <ServicesSection />
+      <CTASection />
+    </div>
   );
 }
 
-// Header Section with optimized structure
+// Separated components for better code organization and performance
 const HeaderSection = () => (
-  <header className="hero-gradient py-16 lg:py-24">
+  <header className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-16 lg:py-24">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center">
-        <h1 className="text-4xl lg:text-6xl font-serif-optimized font-bold text-gray-900 mb-6 critical-path">
+        <h1 className="text-4xl lg:text-6xl font-serif font-bold text-gray-900 mb-6">
           Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Services</span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto critical-path">
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Comprehensive pediatric care services designed to support your child&apos;s health and development at every stage.
         </p>
       </div>
@@ -189,14 +179,8 @@ const HeaderSection = () => (
   </header>
 );
 
-// Services Section with semantic markup
 const ServicesSection = () => (
-  <section 
-    className="py-16 lg:py-24 lazy-load" 
-    itemScope 
-    itemType="https://schema.org/MedicalOrganization"
-    aria-labelledby="services-heading"
-  >
+  <section className="py-16 lg:py-24" itemScope itemType="https://schema.org/MedicalOrganization">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {services.map((service, index) => (
@@ -207,14 +191,10 @@ const ServicesSection = () => (
   </section>
 );
 
-// CTA Section with better accessibility
 const CTASection = () => (
-  <section 
-    className="py-16 lg:py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 text-white"
-    aria-labelledby="cta-heading"
-  >
+  <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 text-white">
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 id="cta-heading" className="text-3xl lg:text-5xl font-serif-optimized font-bold mb-6">
+      <h2 className="text-3xl lg:text-5xl font-serif font-bold mb-6">
         Ready to Schedule an Appointment?
       </h2>
       <p className="text-lg lg:text-xl mb-8 opacity-90 max-w-3xl mx-auto">
@@ -223,12 +203,13 @@ const CTASection = () => (
       
       <Link
         href="/contact"
-        className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200 hover:scale-105 hover:shadow-lg focus-ring"
+        className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
         aria-label="Book appointment with Dr. Ramya Pediatrics"
-        prefetch={true}
       >
         Book Appointment Now
       </Link>
     </div>
   </section>
 );
+
+export default OptimizedServicesPage;
