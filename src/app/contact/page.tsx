@@ -2,6 +2,8 @@
 
 import { Phone, Mail, MapPin, Clock, Calendar, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
+import ContactPageSchema from '@/components/seo/ContactPageSchema';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -51,15 +53,17 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <ContactPageSchema />
+      <Breadcrumbs items={[{ label: 'Contact Dr. Ramya Bharathi - Pediatrician in Perumbakkam' }]} />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Contact Dr. R Ramya Bharathi
+              Contact Dr. Ramya Bharathi R
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Get in touch with our experienced paediatrician for the best care for your child
+              Serving families in Perumbakkam, Sholinganallur, OMR, and surrounding Chennai areas with expert pediatric care
             </p>
           </div>
         </div>
@@ -72,10 +76,10 @@ export default function ContactPage() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Get In Touch
+                Get In Touch - Conveniently Located in Perumbakkam
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                We&apos;re here to provide the best paediatric care for your child. Reach out to us for appointments, consultations, or any questions you may have.
+                We&apos;re here to provide the best pediatric care for your child in Perumbakkam, Sholinganallur, OMR corridor, and nearby Chennai neighborhoods. Easily accessible from Navalur, Kelambakkam, Siruseri, and IT Corridor areas. Reach out to us for appointments, consultations, or any questions you may have.
               </p>
             </div>
 
@@ -121,18 +125,25 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Clinic Address</h3>
+                  <h3 className="font-semibold text-gray-900 mb-1">Clinic Address - Perumbakkam</h3>
                   <address className="text-gray-700 not-italic leading-relaxed">
                     NewGen Multi Speciality Clinics<br />
                     A Block, 1A2, 363, Nookampalayam Rd<br />
                     Arasankalani, Perumbakkam<br />
-                    Chennai, Tamil Nadu 600126
+                    Chennai, Tamil Nadu 600126<br />
+                    <span className="text-sm text-blue-600 font-medium">
+                      Near OMR | Close to Sholinganallur Metro
+                    </span>
                   </address>
+                  <div className="mt-3 space-y-1 text-sm text-gray-600">
+                    <div><span className="font-medium">Nearby Landmarks:</span> Phoenix MarketCity, SRM University, Navalur Metro</div>
+                    <div><span className="font-medium">Easy Access From:</span> Kelambakkam, Siruseri, IT Corridor, Navalur</div>
+                  </div>
                   <a 
                     href="https://maps.google.com/?q=NewGen+Multi+Speciality+Clinics+A+Block+1A2+363+Nookampalayam+Rd+Arasankalani+Perumbakkam+Chennai+600126" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-block mt-2 text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
+                    className="inline-block mt-3 text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
                   >
                     View on Google Maps →
                   </a>
@@ -184,7 +195,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-semibold">Quick Appointment Booking</h3>
               </div>
               <p className="mb-4 text-blue-100">
-                Book your appointment directly through WhatsApp for faster service during Dr. Ramya&apos;s available hours
+                Book your appointment directly through WhatsApp for faster service during Dr. Ramya&apos;s available hours. Serving Perumbakkam, Sholinganallur, OMR, and nearby areas.
               </p>
               <a 
                 href="https://wa.me/919363956784?text=Hi%20Dr.%20Ramya%20Bharathi,%20I%20would%20like%20to%20book%20an%20appointment%20for%20my%20child." 
@@ -312,7 +323,11 @@ export default function ContactPage() {
 
         {/* Map Section */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Find Our Clinic</h2>
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">Find Our Clinic in Perumbakkam</h2>
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            Conveniently located on Nookampalayam Road, easily accessible from OMR, Sholinganallur Metro, 
+            and major Chennai IT Corridor areas including Navalur, Kelambakkam, and Siruseri.
+          </p>
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="aspect-w-16 aspect-h-9 h-96">
               <iframe
@@ -350,7 +365,8 @@ export default function ContactPage() {
                 </a>
               </div>
               <p className="text-center text-sm text-gray-600 mt-4">
-                Located on Nookampalayam Road, Arasankalani, easily accessible from OMR and other major roads
+                Located on Nookampalayam Road, Perumbakkam - easily accessible from OMR, Sholinganallur Metro, 
+                Phoenix MarketCity, and major IT Corridor companies in Navalur, Kelambakkam, and Siruseri areas.
               </p>
             </div>
           </div>

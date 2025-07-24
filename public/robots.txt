@@ -1,4 +1,5 @@
-# Robots.txt for Dr. R Ramya Bharathi - Pediatrician Website
+# Robots.txt for Dr. Ramya Bharathi R - Pediatrician Website
+# Serving Perumbakkam, Sholinganallur, OMR, and Chennai areas
 
 User-agent: *
 Allow: /
@@ -16,7 +17,10 @@ Disallow: /_next/
 Disallow: *.json$
 
 # Sitemap location
-Sitemap: https://drramya-paediatrics.vercel.app/sitemap.xml
+Sitemap: https://drramyabharathi.com/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
 
 # Crawl delay (optional - be respectful to search engines)
 Crawl-delay: 1

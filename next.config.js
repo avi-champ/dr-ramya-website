@@ -45,10 +45,33 @@ const nextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
-          // Cache control for static assets
+        ],
+      },
+      // Cache control for images
+      {
+        source: '/images/(.*)',
+        headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Expires',
+            value: new Date(Date.now() + 31536000000).toUTCString(),
+          },
+        ],
+      },
+      // Cache control for static assets
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Expires',
+            value: new Date(Date.now() + 31536000000).toUTCString(),
           },
         ],
       },
@@ -67,7 +90,19 @@ const nextConfig = {
   // Redirects for SEO (if needed)
   async redirects() {
     return [
-      // Add any redirects here for old URLs
+      // Redirect www to non-www for consistency (choose one)
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.drramyabharathi.com',
+          },
+        ],
+        destination: 'https://drramyabharathi.com/:path*',
+        permanent: true,
+      },
+      // Add any other redirects here for old URLs
     ];
   },
   
