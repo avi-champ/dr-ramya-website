@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run compress-articles && next build",
+    "build:fast": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "compress-articles": "tsx src/scripts/compress-articles.ts",
+    "clear-cache": "rimraf .cache",
+    "perf:analyze": "npm run build && npx @next/bundle-analyzer",
+    "preoptimize": "npm run clear-cache && npm run compress-articles"
   },
   "dependencies": {
     "date-fns": "^2.30.0",
@@ -26,6 +31,7 @@
     "slugify": "^1.6.6"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15.4.3",
     "@types/js-yaml": "^4.0.9",
     "@types/marked": "^5.0.2",
     "@types/node": "^22.0.0",
@@ -36,7 +42,9 @@
     "eslint-config-next": "^15.0.0",
     "postcss": "^8.4.47",
     "raw-loader": "^4.0.2",
+    "rimraf": "^3.0.2",
     "tailwindcss": "^3.4.13",
+    "tsx": "^4.20.3",
     "typescript": "^5.6.0"
   },
   "engines": {

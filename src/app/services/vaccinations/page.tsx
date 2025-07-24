@@ -50,7 +50,7 @@ export default function VaccinationsPage() {
           {/* Vaccination Programs */}
           <div className="mb-16">
             <h2 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-8">Vaccination Programs</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6">
                 <h3 className="font-semibold text-gray-900 mb-4">IAP Schedule</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
@@ -58,16 +58,6 @@ export default function VaccinationsPage() {
                   <li>• Age-appropriate timing</li>
                   <li>• Evidence-based protection</li>
                   <li>• Latest medical guidelines</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Government UIP</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Free essential vaccines</li>
-                  <li>• National immunization program</li>
-                  <li>• Basic disease protection</li>
-                  <li>• Government certified</li>
                 </ul>
               </div>
               

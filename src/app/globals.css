@@ -50,6 +50,22 @@
   font-family: var(--font-sans);
 }
 
+/* Animation for services page optimization */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
 /* Glass Morphism Effects */
 .glass-card {
   background: rgba(255, 255, 255, 0.95);
@@ -340,68 +356,98 @@
   max-width: none;
   color: var(--color-dark-700);
   line-height: 1.7;
+  /* Mobile-first responsive word wrapping */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Ensure all prose content respects container boundaries */
+.prose * {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .prose h1 {
   color: var(--color-dark-900);
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   line-height: 1.2;
   margin-bottom: 1rem;
   margin-top: 2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose h2 {
   color: var(--color-dark-900);
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 1.875rem;
+  font-size: clamp(1.5rem, 3.5vw, 1.875rem);
   line-height: 1.3;
   margin-bottom: 0.75rem;
   margin-top: 2rem;
   border-bottom: 2px solid var(--color-gray-300);
   padding-bottom: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose h3 {
   color: var(--color-dark-900);
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   line-height: 1.4;
   margin-bottom: 0.5rem;
   margin-top: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose h4 {
   color: var(--color-dark-900);
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   line-height: 1.4;
   margin-bottom: 0.5rem;
   margin-top: 1.25rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose p {
   margin-bottom: 1.25rem;
   color: var(--color-gray-500);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.6;
 }
 
 .prose ul, .prose ol {
   margin-bottom: 1.25rem;
   padding-left: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose li {
   margin-bottom: 0.5rem;
   color: var(--color-gray-500);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.6;
 }
 
 .prose strong {
   color: var(--color-dark-900);
   font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose blockquote {
@@ -411,41 +457,389 @@
   background: var(--color-gray-100);
   padding: 1rem;
   border-radius: 0 8px 8px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
 .prose code {
   background: var(--color-gray-100);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
   color: var(--color-dark-800);
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .prose pre {
   background: var(--color-dark-800);
   color: var(--color-white);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
   margin: 1.5rem 0;
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  /* Ensure code blocks don't overflow on mobile */
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
 }
 
 .prose table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  /* Mobile table responsiveness */
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .prose th, .prose td {
   border: 1px solid var(--color-gray-300);
-  padding: 0.75rem;
+  padding: 0.5rem;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 120px;
 }
 
 .prose th {
   background: var(--color-gray-100);
   font-weight: 600;
   color: var(--color-dark-900);
+}
+
+/* Long URLs and links handling */
+.prose a {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  color: var(--color-accent-blue);
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+/* Images responsive handling */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* ===== MOBILE-SPECIFIC ARTICLE OPTIMIZATIONS ===== */
+/* Force text wrapping for all article content */
+.article-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  max-width: 100%;
+}
+
+/* Prevent horizontal scroll issues */
+.article-container {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* ===== ENHANCED MOBILE TABLE OPTIMIZATIONS ===== */
+/* Mobile-first responsive tables with card-style layout */
+@media (max-width: 768px) {
+  .prose table {
+    display: block;
+    border: none;
+    margin: 1.5rem 0;
+    background: transparent;
+    font-size: 0.875rem;
+  }
+  
+  .prose thead {
+    display: none; /* Hide headers on mobile */
+  }
+  
+  .prose tbody {
+    display: block;
+  }
+  
+  .prose tr {
+    display: block;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .prose td {
+    display: block;
+    border: none;
+    padding: 0.5rem 0;
+    text-align: left;
+    position: relative;
+    padding-left: 40%;
+    min-width: auto;
+    word-break: break-word;
+  }
+  
+  .prose td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 35%;
+    font-weight: 600;
+    color: var(--color-dark-900);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Specific styling for vaccination schedule tables */
+  .prose td:nth-child(1):before { content: "Age"; }
+  .prose td:nth-child(2):before { content: "Vaccine"; }
+  .prose td:nth-child(3):before { content: "Prevents"; }
+  .prose td:nth-child(4):before { content: "Route"; }
+  .prose td:nth-child(5):before { content: "Site"; }
+  
+  /* Additional table variations */
+  .prose tr:has(td:nth-child(5)) .prose td:nth-child(1):before { content: "Vaccine"; }
+  .prose tr:has(td:nth-child(5)) .prose td:nth-child(2):before { content: "Age"; }
+  .prose tr:has(td:nth-child(5)) .prose td:nth-child(3):before { content: "Prevention"; }
+  .prose tr:has(td:nth-child(5)) .prose td:nth-child(4):before { content: "Relevance"; }
+  .prose tr:has(td:nth-child(5)) .prose td:nth-child(5):before { content: "Category"; }
+}
+
+/* Enhanced responsive table container */
+.mobile-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile table optimization indicators */
+.table-mobile-hint {
+  display: none;
+  background: var(--color-accent-blue);
+  color: var(--color-white);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .table-mobile-hint {
+    display: block;
+  }
+}
+
+/* Smooth transitions for table elements */
+.prose table,
+.accordion-item,
+.accordion-header,
+.accordion-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading state for dynamic content */
+.table-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: var(--color-gray-500);
+}
+
+/* Print optimizations for tables */
+@media print {
+  .table-accordion {
+    display: none !important;
+  }
+  
+  .table-standard {
+    display: block !important;
+  }
+  
+  .prose table {
+    font-size: 10pt;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .prose th,
+  .prose td {
+    border: 1px solid #000;
+    padding: 4px;
+    font-size: 9pt;
+  }
+}
+
+/* Accordion-style table for complex data */
+.table-accordion {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .table-accordion {
+    display: block;
+  }
+  
+  .table-standard {
+    display: none;
+  }
+  
+  .accordion-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .accordion-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent-blue);
+  }
+  
+  .accordion-header {
+    background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-gray-200) 100%);
+    padding: 1.25rem;
+    font-weight: 600;
+    color: var(--color-dark-900);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray-300);
+    transition: all 0.3s ease;
+    user-select: none;
+    font-size: 1rem;
+  }
+  
+  .accordion-header:hover {
+    background: linear-gradient(135deg, var(--color-accent-gold) 0%, #f6d55c 100%);
+    color: var(--color-dark-900);
+  }
+  
+  .accordion-header:active {
+    transform: scale(0.98);
+  }
+  
+  .accordion-header span {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-header.active span {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-content {
+    padding: 1.25rem;
+    display: none;
+    background: var(--color-white);
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .accordion-content.active {
+    display: block;
+  }
+  
+  .accordion-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-gray-200);
+    transition: background-color 0.2s ease;
+  }
+  
+  .accordion-row:last-child {
+    border-bottom: none;
+  }
+  
+  .accordion-row:hover {
+    background-color: var(--color-gray-100);
+    border-radius: 6px;
+    margin: 0 -0.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  .accordion-label {
+    font-weight: 600;
+    color: var(--color-dark-800);
+    font-size: 0.875rem;
+    min-width: 35%;
+    line-height: 1.4;
+  }
+  
+  .accordion-value {
+    font-weight: 400;
+    color: var(--color-gray-600);
+    font-size: 0.875rem;
+    text-align: right;
+    flex: 1;
+    margin-left: 1rem;
+    line-height: 1.4;
+  }
+}
+
+/* Animation for accordion content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Handle long URLs and code snippets */
+.prose a[href*="://"] {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+/* Better list handling on mobile */
+@media (max-width: 640px) {
+  .prose ul, .prose ol {
+    padding-left: 1rem;
+  }
+  
+  .prose li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .prose blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 /* ===== ANIMATIONS ===== */
@@ -489,16 +883,152 @@
     font-size: clamp(2rem, 8vw, 3rem);
   }
   
+  /* Enhanced mobile prose styles */
+  .prose {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+  }
+  
   .prose h1 {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
   }
   
   .prose h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   
   .prose h3 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .prose ul, .prose ol {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose li {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+  }
+  
+  .prose blockquote {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .prose code {
+    font-size: 0.75rem;
+    padding: 0.125rem 0.25rem;
+  }
+  
+  .prose pre {
+    padding: 0.75rem;
+    margin: 1rem 0;
+    font-size: 0.75rem;
+  }
+  
+  /* Enhanced mobile table handling with card layout */
+  .prose table {
+    display: block;
+    width: 100%;
+    overflow: visible;
+    white-space: normal;
+    font-size: 0.875rem;
+    margin: 1.5rem 0;
+    border: none;
+    background: transparent;
+  }
+  
+  .prose thead {
+    display: none;
+  }
+  
+  .prose tbody {
+    display: block;
+  }
+  
+  .prose tr {
+    display: block;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+  
+  .prose tr:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent-blue);
+  }
+  
+  .prose td {
+    display: block;
+    border: none;
+    padding: 0.75rem 0;
+    text-align: left;
+    position: relative;
+    padding-left: 45%;
+    min-width: auto;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  
+  .prose td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 40%;
+    font-weight: 600;
+    color: var(--color-dark-800);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+  
+  .prose td:first-child {
+    font-weight: 600;
+    color: var(--color-dark-900);
+    font-size: 1rem;
+    border-bottom: 1px solid var(--color-gray-200);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .prose td:first-child:before {
+    font-weight: 700;
+    color: var(--color-accent-gold);
+  }
+  
+  /* Ensure images are mobile-friendly */
+  .prose img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
   }
 }
 

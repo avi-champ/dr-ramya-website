@@ -92,6 +92,8 @@ Vaccination is one of the most successful and cost-effective public health inter
 
 ### 📋 **Complete UIP Vaccination Schedule (FREE)**
 
+<div class="table-standard">
+
 | **Age** | **Vaccine** | **Disease Prevention** | **Route** | **Site** |
 |---------|-------------|------------------------|-----------|----------|
 | **Birth** | BCG | Severe Childhood Tuberculosis | Intradermal | Right Shoulder |
@@ -119,6 +121,219 @@ Vaccination is one of the most successful and cost-effective public health inter
 | **9-16 years** | JE-2** | Japanese Encephalitis | Subcutaneous | Upper Arm |
 | **10 years** | Td | Tetanus, Diphtheria | Intramuscular | Upper Arm |
 | **16 years** | Td | Tetanus, Diphtheria | Intramuscular | Upper Arm |
+
+</div>
+
+<div class="table-accordion">
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **At Birth** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">BCG Vaccine</span>
+      <span class="accordion-value">Severe Childhood Tuberculosis • Right Shoulder • Intradermal</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">OPV-0</span>
+      <span class="accordion-value">Polio • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Hepatitis B-1</span>
+      <span class="accordion-value">Hepatitis B • Thigh • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **6 Weeks** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">OPV-1</span>
+      <span class="accordion-value">Polio • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Pentavalent-1</span>
+      <span class="accordion-value">DPT + Hepatitis B + Hib • Thigh • Intramuscular</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Rotavirus-1*</span>
+      <span class="accordion-value">Rotavirus Diarrhoea • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">PCV-1*</span>
+      <span class="accordion-value">Pneumococcal Disease • Thigh • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **10 Weeks** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">OPV-2</span>
+      <span class="accordion-value">Polio • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Pentavalent-2</span>
+      <span class="accordion-value">DPT + Hepatitis B + Hib • Thigh • Intramuscular</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Rotavirus-2*</span>
+      <span class="accordion-value">Rotavirus Diarrhoea • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">PCV-2*</span>
+      <span class="accordion-value">Pneumococcal Disease • Thigh • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **14 Weeks** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">OPV-3</span>
+      <span class="accordion-value">Polio • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Pentavalent-3</span>
+      <span class="accordion-value">DPT + Hepatitis B + Hib • Thigh • Intramuscular</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Rotavirus-3*</span>
+      <span class="accordion-value">Rotavirus Diarrhoea • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">PCV-3*</span>
+      <span class="accordion-value">Pneumococcal Disease • Thigh • Intramuscular</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">IPV-1</span>
+      <span class="accordion-value">Polio (Injectable) • Thigh • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **9 Months** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">Measles-Rubella (MR)</span>
+      <span class="accordion-value">Measles, Rubella • Upper Arm • Subcutaneous</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **16-24 Months** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">MR-2</span>
+      <span class="accordion-value">Measles, Rubella • Upper Arm • Subcutaneous</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">OPV Booster</span>
+      <span class="accordion-value">Polio • Oral Drops</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">DPT Booster</span>
+      <span class="accordion-value">Diphtheria, Pertussis, Tetanus • Upper Arm • Intramuscular</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">JE-1**</span>
+      <span class="accordion-value">Japanese Encephalitis • Upper Arm • Subcutaneous</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **5-6 Years** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">DPT-2 Booster</span>
+      <span class="accordion-value">Diphtheria, Pertussis, Tetanus • Upper Arm • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **9-16 Years** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">JE-2**</span>
+      <span class="accordion-value">Japanese Encephalitis • Upper Arm • Subcutaneous</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **10 Years** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">Td</span>
+      <span class="accordion-value">Tetanus, Diphtheria • Upper Arm • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **16 Years** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">Td</span>
+      <span class="accordion-value">Tetanus, Diphtheria • Upper Arm • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+if (typeof window !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add click handlers to accordion headers
+    const headers = document.querySelectorAll('.accordion-header');
+    
+    headers.forEach((header, index) => {
+      header.addEventListener('click', function() {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('span');
+        
+        // Toggle content visibility
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+          header.classList.remove('active');
+          if (icon) icon.textContent = '📅';
+        } else {
+          content.style.display = 'block';
+          header.classList.add('active');
+          if (icon) icon.textContent = '📋';
+        }
+      });
+    });
+  });
+}
+</script>
 
 *Available in select states, expanding nationwide  
 **Available only in endemic districts

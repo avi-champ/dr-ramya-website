@@ -71,10 +71,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     };
 
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 article-container">
         {/* Header with Navigation */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
             <Link 
               href="/health-articles"
               className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm mb-4"
@@ -85,10 +85,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <article className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+          <article className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden article-content">
             {/* Article Header */}
-            <div className="p-8 border-b border-gray-100">
+            <div className="p-4 sm:p-6 lg:p-8 border-b border-gray-100">
               <div className="flex items-center gap-2 mb-4">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(frontMatter.category)}`}>
                   {frontMatter.category}
@@ -102,11 +102,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               
               {/* Decorative Article Metadata */}
               <div className="mb-8">
-                <h1 className="font-serif text-3xl font-bold text-gray-900 mb-4">
+                <h1 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 mb-4 break-words">
                   {frontMatter.title}
                 </h1>
                 
-                <p className="text-lg text-gray-600 mb-8">
+                <p className="text-base sm:text-lg text-gray-600 mb-8 break-words">
                   {frontMatter.description}
                 </p>
               </div>
@@ -122,36 +122,36 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 </div>
               </div>
               
-              <div className="mt-8 bg-gradient-to-r from-blue-50/50 via-white to-purple-50/50 rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+              <div className="mt-8 bg-gradient-to-r from-blue-50/50 via-white to-purple-50/50 rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-sm">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
                     {/* Author Info */}
-                    <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm rounded-xl px-4 py-3 shadow-sm border border-white/50">
+                    <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-3 shadow-sm border border-white/50">
                       <div className="flex-shrink-0">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-md">
-                          <User className="w-5 h-5 text-white" />
+                        <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-md">
+                          <User className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-gray-900">Dr. R Ramya Bharathi</p>
+                        <p className="text-sm font-semibold text-gray-900 break-words">Dr. R Ramya Bharathi</p>
                         <p className="text-xs text-blue-600">Consultant Pediatrician</p>
                       </div>
                     </div>
                     
                     {/* Reading Stats */}
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-2 text-sm text-gray-600 bg-white/70 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/50">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                    <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
+                      <div className="flex items-center gap-2 text-sm text-gray-600 bg-white/70 backdrop-blur-sm rounded-lg px-2 sm:px-3 py-2 border border-white/50">
+                        <div className="w-5 sm:w-6 h-5 sm:h-6 bg-green-100 rounded-full flex items-center justify-center">
                           <Clock className="w-3 h-3 text-green-600" />
                         </div>
-                        <span className="font-medium">{frontMatter.readingTime} min read</span>
+                        <span className="font-medium text-xs sm:text-sm">{frontMatter.readingTime} min read</span>
                       </div>
                       
-                      <div className="flex items-center gap-2 text-sm text-gray-600 bg-white/70 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/50">
-                        <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center">
+                      <div className="flex items-center gap-2 text-sm text-gray-600 bg-white/70 backdrop-blur-sm rounded-lg px-2 sm:px-3 py-2 border border-white/50">
+                        <div className="w-5 sm:w-6 h-5 sm:h-6 bg-purple-100 rounded-full flex items-center justify-center">
                           <Calendar className="w-3 h-3 text-purple-600" />
                         </div>
-                        <span className="font-medium">
+                        <span className="font-medium text-xs sm:text-sm">
                           {new Date(frontMatter.publishDate).toLocaleDateString('en-US', { 
                             year: 'numeric', 
                             month: 'short', 
@@ -182,17 +182,17 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </div>
             
             {/* Article Content */}
-            <div className="p-8">
-              <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700" 
+            <div className="p-4 sm:p-6 lg:p-8">
+              <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700 break-words overflow-hidden article-content" 
                    dangerouslySetInnerHTML={{ __html: htmlContent }} 
               />
             </div>
             
             {/* Article Footer */}
-            <div className="p-8 bg-gray-50 border-t border-gray-100">
-              <div className="flex items-center justify-between">
+            <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 border-t border-gray-100">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="text-sm text-gray-600">
-                  <p>Age Group: <span className="font-medium">{frontMatter.ageGroup}</span></p>
+                  <p>Age Group: <span className="font-medium break-words">{frontMatter.ageGroup}</span></p>
                   {frontMatter.lastUpdated && (
                     <p className="mt-1">Last Updated: {new Date(frontMatter.lastUpdated).toLocaleDateString()}</p>
                   )}
@@ -200,7 +200,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 
                 <Link 
                   href="/health-articles"
-                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="px-4 sm:px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center text-sm sm:text-base"
                 >
                   View All Articles
                 </Link>
@@ -209,12 +209,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </article>
           
           {/* Medical Disclaimer */}
-          <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+              <AlertCircle className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
               <div className="text-sm text-yellow-800">
                 <p className="font-medium mb-1">Medical Disclaimer</p>
-                <p>This article is for educational purposes only and should not replace professional medical advice. Always consult with your pediatrician for personalized medical guidance.</p>
+                <p className="break-words">This article is for educational purposes only and should not replace professional medical advice. Always consult with your pediatrician for personalized medical guidance.</p>
               </div>
             </div>
           </div>

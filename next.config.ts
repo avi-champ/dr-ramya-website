@@ -3,6 +3,22 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   
+  // Performance optimizations
+  experimental: {
+    // Enable modern bundling optimizations
+    turbo: {
+      rules: {
+        '*.md': {
+          loaders: ['raw-loader'],
+        },
+      },
+    },
+  },
+  
+  // Compression and caching
+  compress: true,
+  poweredByHeader: false,
+  
   // Image optimization settings
   images: {
     remotePatterns: [
@@ -20,40 +36,34 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 86400, // 24 hours
   },
   
-  // Performance optimizations
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  
-  // Webpack configuration for markdown files
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: 'raw-loader',
-    });
-    
-    // Optimize cache settings for Windows
-    if (process.platform === 'win32') {
-      config.cache = {
-        type: 'filesystem',
-        cacheDirectory: '.next/cache/webpack',
-        buildDependencies: {
-          config: [__filename],
-        },
-        // Reduce file system pressure
-        compression: 'gzip',
-        maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
-      };
-    }
-    
-    return config;
-  },
-  
-  // Security headers
+  // Security and caching headers
   async headers() {
     return [
+      {
+        source: '/api/articles/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=3600, stale-while-revalidate=300',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, s-maxage=86400',
+          },
+        ],
+      },
+      {
+        source: '/health-articles/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=86400, stale-while-revalidate=3600',
+          },
+        ],
+      },
       {
         source: '/:path*',
         headers: [
