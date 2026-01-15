@@ -43,7 +43,7 @@ Welcoming a newborn is one of life's most precious moments. Understanding essent
 
 ## 🚨 Emergency Signs - Seek Immediate Medical Attention
 
-### **Critical Warning Signs (Call Emergency Services):**
+### **Critical Warning Signs:**
 
 **Breathing Problems:**
 - Difficulty breathing, grunting, or fast breathing (>60 breaths/minute)
@@ -224,7 +224,6 @@ Welcoming a newborn is one of life's most precious moments. Understanding essent
 #### **Week 3-4:**
 - More alert periods during day
 - May smile responsively
-- Better head control when supported
 - Follows objects with eyes briefly
 
 ### 3. **Regular Check-ups**
@@ -242,7 +241,7 @@ Welcoming a newborn is one of life's most precious moments. Understanding essent
 - **Eye examination** - Check for abnormalities
 
 ### **Early Immunizations:**
-- **Hepatitis B** - First dose within 24 hours of birth
+- **OPV, BCG, Hepatitis B** - Within 24-48 hours of life
 - **Follow schedule** - As per IAP immunization guidelines
 - **Record keeping** - Maintain immunization records
 
@@ -321,31 +320,28 @@ Welcoming a newborn is one of life's most precious moments. Understanding essent
 ### **Q: How often should I bathe my newborn?**
 **A:** 2-3 times per week is sufficient for newborns. Give sponge baths until the umbilical cord heals, then you can use a baby bathtub.
 
-## When to Call Your Pediatrician
+### **Q: My newborn has swollen breasts; what should I do?**
+**A:** It is quite common for both baby boys and girls to have enlarged breast tissue (and sometimes even a little milk secretion) due to the transfer of maternal hormones through the placenta. This is a painless, normal condition that will resolve on its own within 2–3 weeks as the hormones naturally leave the baby's system.
 
-### **Call Immediately (Emergency) if:**
-- Any fever ≥100.4°F (38°C)
-- Difficulty breathing or blue discoloration
-- Excessive sleepiness or difficulty waking
-- Refusing feeds for more than 8 hours
-- No wet diapers for 12+ hours
-- Blood in stool or vomit
-- Seizures or unusual movements
-- High-pitched crying or extreme fussiness
+**Important:** Never massage or squeeze the breast tissue. This can cause a serious infection. Keep it clean and consult your pediatrician only if you notice signs of infection, such as redness, pus-like discharge, the area feeling unusually warm, or if the baby cries excessively when the area is touched.
 
-### **Call Within 24 Hours if:**
-- Jaundice appearing after 24 hours
-- Fewer than 6 wet diapers per day after day 3
-- Not regaining birth weight by 2 weeks
-- Persistent vomiting after feeds
-- Umbilical cord showing signs of infection
-- Any concerns about feeding or development
+### **Q: My newborn daughter has vaginal bleeding; is this normal?**
+**A:** Yes, this is a harmless condition called pseudomenses (false menses) caused by the sudden drop in maternal hormones after birth; it is not a "period" and will resolve on its own without treatment within a few days to weeks.
 
-### **Call During Office Hours if:**
-- Questions about feeding or weight gain
-- Concerns about development or behavior
-- Need guidance on daily care routines
-- Vaccine scheduling questions
+### **Q: My baby girl has white vaginal discharge and puffiness; is this normal?**
+**A:** Yes, grayish-white mucus and puffiness are normal responses to maternal estrogen exposure during pregnancy; these findings will resolve on their own as the hormones naturally leave the baby's system. To clean the area, use only warm water and cotton balls during baths.
+
+### **Q: Why does my newborn cry before passing urine?**
+**A:** It is completely normal for neonates to cry before urinating because the stretching of their small bladder creates an unfamiliar sensation that causes them to fuss.
+
+### **Q: My baby spits out milk often; is it harmful?**
+**A:** Spitting up is a common, harmless result of an immature digestive system and is generally not a concern if the baby is happy and gaining weight.
+
+### **Q: Why does my baby often have sudden startling movements?**
+**A:** Sudden, jerky movements of the limbs in response to loud noises or quick shifts in position are part of a normal, healthy "startle reflex" (Moro reflex). This reflex is temporary, lasting only a few seconds before the baby calms down, and will naturally disappear as the baby grows older.
+
+### **Q: Is it normal for my baby to have hiccups multiple times a day?**
+**A:** Yes, hiccups are very common in newborns and are usually caused by a full stomach or swallowing air during feeds. They do not cause the baby any pain and typically stop on their own within a few minutes without any intervention.
 
 ## Key Takeaways
 

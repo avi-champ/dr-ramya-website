@@ -100,6 +100,7 @@ Vaccination is one of the most successful and cost-effective public health inter
 | **Birth** | OPV-0 | Polio | Oral | Oral Drops |
 | **Birth** | Hepatitis B-1 | Hepatitis B | Intramuscular | Thigh |
 | **6 weeks** | OPV-1 | Polio | Oral | Oral Drops |
+| **6 weeks** | fIPV | Polio | Intradermal | Right Upper Arm |
 | **6 weeks** | Pentavalent-1 | DPT + Hepatitis B + Hib | Intramuscular | Thigh |
 | **6 weeks** | Rotavirus-1* | Rotavirus Diarrhoea | Oral | Oral Drops |
 | **6 weeks** | PCV-1* | Pneumococcal Disease | Intramuscular | Thigh |
@@ -111,14 +112,15 @@ Vaccination is one of the most successful and cost-effective public health inter
 | **14 weeks** | Pentavalent-3 | DPT + Hepatitis B + Hib | Intramuscular | Thigh |
 | **14 weeks** | Rotavirus-3* | Rotavirus Diarrhoea | Oral | Oral Drops |
 | **14 weeks** | PCV-3* | Pneumococcal Disease | Intramuscular | Thigh |
-| **14 weeks** | IPV-1 | Polio (Injectable) | Intramuscular | Thigh |
-| **9 months** | Measles-Rubella (MR) | Measles, Rubella | Subcutaneous | Upper Arm |
-| **16-24 months** | MR-2 | Measles, Rubella | Subcutaneous | Upper Arm |
-| **16-24 months** | OPV Booster | Polio | Oral | Oral Drops |
-| **16-24 months** | DPT Booster | Diphtheria, Pertussis, Tetanus | Intramuscular | Upper Arm |
-| **16-24 months** | JE-1** | Japanese Encephalitis | Subcutaneous | Upper Arm |
+| **14 weeks** | fIPV | Polio (Injectable) | Intramuscular | Thigh |
+| **6 months** | Typhoid Conjugate Vaccine | Typhoid Fever | Intramuscular | Upper Arm |
+| **9-12 months** | Measles-Rubella (MR) | Measles, Rubella | Subcutaneous | Upper Arm |
+| **9-12 months** | JE-1 | Japanese Encephalitis | Subcutaneous | Upper Arm |
+| **16-18 months** | MR-2 | Measles, Rubella | Subcutaneous | Upper Arm |
+| **16-18 months** | JE-2 | Japanese Encephalitis | Subcutaneous | Upper Arm |
+| **16-18 months** | OPV Booster | Polio | Oral | Oral Drops |
+| **16-18 months** | DPT Booster | Diphtheria, Pertussis, Tetanus | Intramuscular | Upper Arm |
 | **5-6 years** | DPT-2 Booster | Diphtheria, Pertussis, Tetanus | Intramuscular | Upper Arm |
-| **9-16 years** | JE-2** | Japanese Encephalitis | Subcutaneous | Upper Arm |
 | **10 years** | Td | Tetanus, Diphtheria | Intramuscular | Upper Arm |
 | **16 years** | Td | Tetanus, Diphtheria | Intramuscular | Upper Arm |
 
@@ -216,8 +218,20 @@ Vaccination is one of the most successful and cost-effective public health inter
       <span class="accordion-value">Pneumococcal Disease • Thigh • Intramuscular</span>
     </div>
     <div class="accordion-row">
-      <span class="accordion-label">IPV-1</span>
+      <span class="accordion-label">fIPV</span>
       <span class="accordion-value">Polio (Injectable) • Thigh • Intramuscular</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **6 Months** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">Typhoid Conjugate Vaccine</span>
+      <span class="accordion-value">Typhoid Fever • Upper Arm • Intramuscular</span>
     </div>
   </div>
 </div>
@@ -231,17 +245,41 @@ Vaccination is one of the most successful and cost-effective public health inter
       <span class="accordion-label">Measles-Rubella (MR)</span>
       <span class="accordion-value">Measles, Rubella • Upper Arm • Subcutaneous</span>
     </div>
+    <div class="accordion-row">
+      <span class="accordion-label">JE-1</span>
+      <span class="accordion-value">Japanese Encephalitis • Upper Arm • Subcutaneous</span>
+    </div>
   </div>
 </div>
 
 <div class="accordion-item">
   <div class="accordion-header">
-    **16-24 Months** <span>📅</span>
+    **15 Months** <span>📅</span>
+  </div>
+  <div class="accordion-content">
+    <div class="accordion-row">
+      <span class="accordion-label">MMR-2</span>
+      <span class="accordion-value">Measles, Mumps, Rubella • Upper Arm • Subcutaneous</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">Varicella-1</span>
+      <span class="accordion-value">Chickenpox • Upper Arm • Subcutaneous</span>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    **16-18 Months** <span>📅</span>
   </div>
   <div class="accordion-content">
     <div class="accordion-row">
       <span class="accordion-label">MR-2</span>
       <span class="accordion-value">Measles, Rubella • Upper Arm • Subcutaneous</span>
+    </div>
+    <div class="accordion-row">
+      <span class="accordion-label">JE-2</span>
+      <span class="accordion-value">Japanese Encephalitis • Upper Arm • Subcutaneous</span>
     </div>
     <div class="accordion-row">
       <span class="accordion-label">OPV Booster</span>
@@ -252,8 +290,8 @@ Vaccination is one of the most successful and cost-effective public health inter
       <span class="accordion-value">Diphtheria, Pertussis, Tetanus • Upper Arm • Intramuscular</span>
     </div>
     <div class="accordion-row">
-      <span class="accordion-label">JE-1**</span>
-      <span class="accordion-value">Japanese Encephalitis • Upper Arm • Subcutaneous</span>
+      <span class="accordion-label">Varicella-2</span>
+      <span class="accordion-value">Chickenpox • Upper Arm • Subcutaneous</span>
     </div>
   </div>
 </div>
@@ -338,10 +376,15 @@ if (typeof window !== 'undefined') {
 *Available in select states, expanding nationwide  
 **Available only in endemic districts
 
-### 🎯 **Mission Indradhanush Goals**
-- Target: 90% full immunization coverage nationwide
-- Focus: Hard-to-reach areas and underserved populations
-- Recent Achievement: 18.5% increase in coverage in targeted districts
+### 🎯 **Mission Indradhanush**
+
+Mission Indradhanush aims to reach all children who are unvaccinated or partially vaccinated against vaccine-preventable diseases. India's Universal Immunisation Programme (UIP) provides **free vaccines against 12 life-threatening diseases** to 26 million children annually, protecting them against:
+
+- **Tuberculosis, Diphtheria, Pertussis, Tetanus, Polio, Hepatitis B**
+- **Pneumonia & Meningitis** (Haemophilus Influenzae type b)
+- **Measles, Rubella**, Japanese Encephalitis, and Rotavirus diarrhoea
+
+*Rubella, JE, and Rotavirus vaccines available in select states and districts*
 
 ## Indian Academy of Pediatrics (IAP) - Comprehensive Schedule
 
@@ -353,7 +396,7 @@ if (typeof window !== 'undefined') {
 | **Hepatitis A** | 12-18 months (2 doses) | Hepatitis A | Medium - Endemic areas | Optional |
 | **Varicella** | 12-15 months | Chickenpox | Medium - Prevents complications | Optional |
 | **MMR** | 12 months, 4-6 years | Measles, Mumps, Rubella | High - Better coverage than MR | Optional |
-| **Typhoid** | 2 years | Typhoid Fever | Medium - Endemic areas | Optional |
+| **Typhoid** | 6 months | Typhoid Fever | Medium - Endemic areas | Optional |
 | **HPV (9vHPV)** | 9-14 years (2 doses) | Cervical Cancer, Genital Warts | High - Boys and girls | Optional |
 | **Meningococcal ACWY** | 2-10 years | Meningococcal Disease | Medium - High-risk areas | Optional |
 | **IPV Additional** | 2, 4, 6 months | Polio (Enhanced protection) | High - Better immunity | Optional |
@@ -391,7 +434,7 @@ if (typeof window !== 'undefined') {
 - OPV-2 & 3
 - Rotavirus-2 & 3
 - PCV-2 & 3
-- IPV-1 (at 14 weeks)
+- fIPV (at 14 weeks)
 
 **IAP Additional:**
 - IPV-2 & 3 (if enhanced schedule)
@@ -401,12 +444,13 @@ if (typeof window !== 'undefined') {
 - None scheduled
 
 **IAP Additional:**
+- Typhoid Conjugate Vaccine
 - Influenza vaccine (annual - first time)
-- IPV-3 (if enhanced schedule)
 
 ### 👦 **9 Months**
 **FREE (UIP):**
 - Measles-Rubella (MR)
+- JE-1 (Japanese Encephalitis)
 
 **IAP Additional:**
 - MMR (instead of MR, if available)
@@ -417,26 +461,35 @@ if (typeof window !== 'undefined') {
 
 **IAP Additional:**
 - MMR-1 (if not given at 9 months)
-- Varicella
 - Hepatitis A-1
 
-### 🏃 **15-18 Months**
+### 🏃 **15 Months**
+**FREE (UIP):**
+- None scheduled
+
+**IAP Additional:**
+- MMR-2
+- Varicella-1
+
+### 🏃 **16-18 Months**
 **FREE (UIP):**
 - MR-2
 - DPT Booster
 - OPV Booster
+- JE-2
 - PCV Booster (select states)
 
 **IAP Additional:**
-- MMR-2
 - Varicella-2 (if needed)
 - Hepatitis A-2
 
-### 👩‍🎓 **9-14 Years**
+### 👩‍🎓 **10-14 Years**
 **FREE (UIP):**
+- Td (Tetanus, Diphtheria)
 - Planned: HPV for girls (government proposal 2024)
 
 **IAP Additional:**
+- Tdap (Tetanus, Diphtheria, Pertussis)
 - HPV (9vHPV) - 2 doses, 6 months apart (Boys and Girls)
 
 ## Vaccine Safety & Side Effects
@@ -484,14 +537,10 @@ if (typeof window !== 'undefined') {
 
 ### 📋 **When to Contact Healthcare Provider**
 
-#### **Immediate Emergency (Call 108/102):**
 - Difficulty breathing
 - Swelling of face/throat
 - Severe allergic reaction
-- High fever with stiffness
 - Persistent vomiting
-
-#### **Contact Within 24 Hours:**
 - Fever over 101°F lasting more than 3 days
 - Severe local reaction (swelling >4 inches)
 - Persistent crying for more than 3 hours
@@ -515,34 +564,12 @@ if (typeof window !== 'undefined') {
 - **Additional vaccines** may be needed based on destination
 - **Timing adjustments** for accelerated schedules
 - **Documentation** required for international travel
-- **Consult travel medicine specialist**
 
 ### 💊 **Chronic Medical Conditions**
 - **Enhanced schedules** often recommended
 - **Additional vaccines** (e.g., pneumococcal, influenza)
 - **Coordination with specialists** needed
 - **Individual risk assessment** required
-
-## Economic Impact & Cost-Effectiveness
-
-### 💰 **Government Investment (UIP)**
-- **Annual Budget** - ₹7,234 crore (2022)
-- **Coverage** - 2.67 crore newborns annually
-- **Cost per child** - Completely FREE to families
-- **ROI** - Every ₹1 spent saves ₹44 in healthcare costs
-
-### 🏥 **Private Healthcare Costs (IAP Additional Vaccines)**
-- **Influenza** - ₹800-1,500 annually
-- **Hepatitis A** - ₹2,500-4,000 (2 doses)
-- **Varicella** - ₹2,000-3,500
-- **HPV** - ₹8,000-15,000 (2 doses)
-- **MMR** - ₹1,500-2,500
-
-### 📊 **Cost-Benefit Analysis**
-- **Disease treatment costs** far exceed vaccination costs
-- **Hospitalizations prevented** - 10 lakh annually (estimated)
-- **Deaths prevented** - 1 lakh annually (estimated)
-- **Long-term disability prevention** - Immeasurable value
 
 ## Frequently Asked Questions
 
@@ -570,6 +597,12 @@ if (typeof window !== 'undefined') {
 ### **Q: When should I choose IAP schedule over UIP?**
 **A:** UIP provides excellent basic protection for free. IAP schedule adds enhanced protection but at additional cost. Consult your pediatrician based on your child's risk factors and your preferences.
 
+### **Q: Should my child be vaccinated during mass campaigns even though they have been vaccinated as per routine schedule?**
+**A:** Yes. Even if your child is completely vaccinated as per the routine immunization schedule, they should be vaccinated during mass campaigns like the Pulse Polio Programme. This is essential to prevent community transmission of disease and to work towards eliminating it entirely. Mass campaigns ensure high population coverage and help achieve herd immunity, protecting not just individual children but the entire community.
+
+### **Q: If my child has already contracted and recovered from a vaccine-preventable disease, is the vaccine still necessary?**
+**A:** Yes. Even if your child has already had the illness, they should still follow the standard immunization schedule once they have fully recovered. While some diseases provide lifelong immunity after infection, many others—including Typhoid, Diphtheria, Pertussis (whooping cough), Hib pneumonia, and Influenza—often only result in short-term protection. This means your child could potentially catch the same disease again in the future.
+
 ## Where to Get Vaccinated
 
 ### 🏥 **FREE UIP Vaccines Available At:**
@@ -583,25 +616,37 @@ if (typeof window !== 'undefined') {
 - **Private Pediatric Clinics**
 - **Private Hospitals**
 - **Corporate Healthcare Centers**
-- **Some Government Hospitals** (paid services)
-
-### 📱 **Digital Tools**
-- **eVIN System** - Electronic vaccine tracking
-- **Co-WIN Platform** - COVID vaccination records
-- **Mother and Child Protection Card** - Government record system
 
 ## Quality Assurance & Cold Chain
 
-### 🌡️ **Vaccine Storage & Quality**
-- **Cold Chain Maintenance** - 2-8°C throughout supply chain
-- **Electronic Monitoring** - eVIN system tracks temperature
-- **Quality Control** - Regular testing at all levels
-- **Trained Personnel** - Cold chain technicians nationwide
+### 🌡️ **Cold Chain Management**
 
-### 🔬 **Manufacturing Standards**
-- **WHO Prequalified** - All UIP vaccines meet international standards
-- **Indian Standards** - Additional quality checks by Central Drugs Standard Control Organization
-- **Regular Audits** - Manufacturing facilities inspected regularly
+The cold chain is a rigorous scientific process that ensures the biological potency of a vaccine is preserved from the moment of manufacture until clinical administration.
+
+**Key Components:**
+
+1. **Perfect Temperature Maintenance** - 2-8°C
+   - Strict temperature control throughout the entire supply chain
+   - Critical for maintaining vaccine efficacy and safety
+   - Even minor temperature deviations can compromise vaccine potency
+
+2. **Electronic Monitoring System (eVIN)**
+   - Real-time temperature tracking at all levels
+   - Automated alerts for temperature deviations
+   - Complete traceability of vaccine movement
+   - Prevents use of compromised vaccines
+
+3. **Constant Quality Checks and Vaccine Vial Monitors**
+   - Regular quality testing at manufacturing, storage, and distribution levels
+   - Vaccine Vial Monitors (VVMs) provide visual indicator of heat exposure
+   - Healthcare providers can identify compromised vaccines before administration
+   - Multiple checkpoints ensure only potent vaccines reach patients
+
+4. **Expert Handling**
+   - Trained cold chain technicians at all levels
+   - Proper handling techniques during storage and transportation
+   - Correct reconstitution procedures by healthcare workers
+   - Regular training and certification programs for personnel
 
 ## Key Takeaways
 

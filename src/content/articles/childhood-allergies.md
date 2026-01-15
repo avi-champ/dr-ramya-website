@@ -123,6 +123,34 @@ Asthma affects approximately 6.7% of children and is the most common chronic lun
 - Physical activity
 - Strong emotions
 
+## Allergic Rhinitis
+
+Allergic rhinitis affects approximately 15% to 30% of the population and is characterized by inflammation of the nasal passages in response to allergens.
+
+### Characteristic Symptoms
+
+- **Repetitive sneezing:** Often occurring in "fits," especially in the morning
+- **Rhinorrhea:** A clear, thin, runny nose
+- **Nasal congestion:** Feeling "stuffed up" due to swollen nasal tissues
+- **Itching:** Affecting the nose, roof of the mouth, throat, and eyes
+- **Allergic shiners:** Dark circles under the eyes caused by increased blood flow near the sinuses
+- **Post-nasal drip:** Leading to frequent throat clearing or a dry cough
+
+### Classification
+
+- **Seasonal:** Triggered by outdoor allergens like pollen (trees, grasses, weeds)
+- **Perennial:** Year-round symptoms usually triggered by indoor allergens (dust mites, pet dander, mold)
+- **Episodic:** Symptoms that occur only during intermittent exposure (e.g., visiting a house with a cat)
+
+### Impact on Quality of Life
+
+If left untreated, allergic rhinitis can lead to secondary complications:
+
+- **Sleep disruption:** Leading to daytime fatigue and decreased concentration
+- **Sinusitis:** Increased risk of sinus infections due to fluid buildup
+- **Eustachian tube dysfunction:** "Popping" or clogged ears, potentially leading to ear infections
+- **Asthma exacerbation:** Uncontrolled nasal allergies can worsen asthma symptoms
+
 ## Atopic Dermatitis (Eczema)
 
 Eczema affects up to 20% of children and often appears in the first year of life.
@@ -176,7 +204,6 @@ Eczema affects up to 20% of children and often appears in the first year of life
 **Environmental allergies:**
 - Use air purifiers with HEPA filters
 - Encase mattresses and pillows in allergen-proof covers
-- Wash bedding in hot water (130°F) weekly
 - Minimize indoor humidity (30-50%)
 - Keep pets out of bedrooms
 
@@ -203,29 +230,12 @@ Eczema affects up to 20% of children and often appears in the first year of life
 - **Topical calcineurin inhibitors:** Alternative anti-inflammatory treatment
 - **Newer treatments:** JAK inhibitors for moderate to severe cases
 
-### Emergency Treatment
-
-**Epinephrine auto-injectors:**
-- Essential for anyone with a history of severe allergic reactions
-- Should be carried at all times
-- Two doses recommended
-- Call 911 after use - hospitalization may be needed
-
-**When to use epinephrine:**
-- Difficulty breathing or wheezing
-- Swelling of face, lips, tongue, or throat
-- Rapid pulse with skin symptoms
-- Severe whole-body reaction
-- Two or more body systems affected
-
 ## Prevention Strategies
 
 ### Primary Prevention (Before allergies develop)
 - Breastfeeding for at least 4 months
 - Avoid tobacco smoke exposure
 - Early introduction of allergenic foods (4-6 months)
-- Maintain healthy gut microbiome
-- Consider probiotics during pregnancy and infancy
 
 ### Secondary Prevention (Preventing progression)
 - Optimal treatment of existing allergies
@@ -236,7 +246,6 @@ Eczema affects up to 20% of children and often appears in the first year of life
 ### Tertiary Prevention (Preventing severe reactions)
 - Strict avoidance of known allergens
 - Emergency action plans
-- Proper use of emergency medications
 - Education for family and caregivers
 
 ## Creating an Allergy Action Plan
@@ -250,8 +259,7 @@ Every child with allergies should have a written action plan that includes:
 
 **Emergency procedures:**
 - When to give antihistamines
-- When to use epinephrine
-- When to call 911
+- Epinephrine auto-injector
 - Hospital preference
 
 **Daily management:**
@@ -259,20 +267,6 @@ Every child with allergies should have a written action plan that includes:
 - Trigger avoidance strategies
 - Signs to watch for
 - Activity restrictions if any
-
-## School and Childcare Considerations
-
-### Communication with Schools
-- Provide written allergy action plan
-- Meet with teachers, nurses, and food service staff
-- Discuss emergency procedures
-- Consider Section 504 plans for accommodations
-
-### Food allergy management at school:
-- Coordinate with cafeteria for safe meals
-- Establish allergen-free zones if needed
-- Train staff on epinephrine use
-- Create buddy systems for younger children
 
 ## When to See an Allergist
 

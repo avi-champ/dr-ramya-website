@@ -41,11 +41,11 @@ Proper nutrition during the first years of life is critical for optimal growth, 
 
 **6-24 Months: Complementary Feeding Phase**
 - Continue breastfeeding while introducing solids
+- Transition to family foods with modifications
 - Critical period for growth and brain development
 - Establish taste preferences and eating patterns
 
 **2-5 Years: Family Food Transition**
-- Transition to family foods with modifications
 - Independence in eating develops
 - Continued rapid growth phase
 
@@ -83,65 +83,6 @@ Continue breastfeeding up to 2 years of age or beyond while introducing appropri
 ### **When to Start Solids**
 
 **WHO Guidelines:** Infants should start receiving complementary foods at 6 months of age in addition to breast milk. Initially, they should receive complementary foods 2–3 times a day between 6–8 months and increase to 3–4 times daily between 9–11 months and 12–24 months.
-
-### **First Foods Introduction**
-
-**6 Months: Single Ingredient Foods**
-- **Rice porridge** (easily digestible)
-- **Mashed banana** (natural sweetness)
-- **Apple puree** (vitamin C)
-- **Sweet potato** (beta-carotene)
-
-**7-8 Months: Combination Foods**
-- **Khichdi** (rice + dal combination)
-- **Vegetable purees** with multiple ingredients
-- **Ragi porridge** (finger millet)
-- **Soft finger foods**
-
-### **Traditional Indian First Foods**
-
-#### **1. Khichdi - The Perfect First Meal**
-
-Khichdi, for babies of any age, is one of the simplest, easiest, and ideal comfort food. Khichdi recipes like Dalia khichdi, palak khichdi, and moong dal khichdi for babies are easy to prepare. They are balanced meals that help your baby's growth and development.
-
-**Basic Baby Khichdi Recipe:**
-- 2 tbsp rice
-- 1 tbsp moong dal
-- 1 cup water
-- Pinch of turmeric
-- 1 tsp ghee
-
-**Nutritional Benefits:**
-- **Carbohydrates** from rice for energy
-- **Protein** from dal for growth
-- **Easy digestion** for developing stomach
-- **Complete amino acid profile** when combined
-
-#### **2. Ragi (Finger Millet) - Nutritional Powerhouse**
-
-Ragi, or finger mille­t, is often the first solid food for babies. It's a favorite­ because it's chock-full of good nutrients like­ calcium, iron, and fibre.
-
-**Ragi Nutritional Profile (per 100g):**
-- **Calcium:** 344mg (higher than milk!)
-- **Iron:** 3.9mg (prevents anemia)
-- **Protein:** 7.3g (muscle development)
-- **Fiber:** 3.6g (digestive health)
-- **Carbohydrates:** 72g (energy)
-
-**Ragi Porridge for Babies:**
-```
-1. Soak 1/4 cup ragi overnight
-2. Grind to smooth paste
-3. Strain through muslin cloth
-4. Cook the liquid for 10 minutes
-5. Add breast milk or formula to desired consistency
-```
-
-**Health Benefits:**
-- **Bone Development** - High calcium content
-- **Iron Absorption** - Prevents anemia
-- **Gluten-Free** - Safe for sensitive babies
-- **Natural Cooling** - Good for Indian climate
 
 ### **Food Groups and Requirements**
 
@@ -293,31 +234,11 @@ Ragi, or finger mille­t, is often the first solid food for babies. It's a favor
 - **3-day rule** - wait between new foods
 - **2-3 solid meals** per day
 
-**Sample 6-8 Month Daily Schedule:**
-```
-Morning: Breast milk
-Breakfast: Ragi porridge or rice cereal
-Mid-morning: Breast milk
-Lunch: Khichdi or vegetable puree
-Evening: Breast milk
-Dinner: Mashed fruit or simple dal
-Night: Breast milk on demand
-```
-
 #### **9-12 Months: Variety Expansion**
 - **Finger foods** introduction
 - **3 meals + 2 snacks** structure
 - **Family food** adaptations
 - **Self-feeding** encouragement
-
-**Sample 9-12 Month Daily Menu:**
-```
-Breakfast: Ragi pancake or idli with ghee
-Mid-morning: Fruit pieces (banana, apple)
-Lunch: Vegetable khichdi with dal
-Evening: Ragi biscuits or steamed vegetable sticks
-Dinner: Rice with dal and vegetable curry (mashed)
-```
 
 ### **Toddlers (1-3 Years)**
 
@@ -332,21 +253,6 @@ Dinner: Rice with dal and vegetable curry (mashed)
 - **Regular meal times** for routine
 - **Family meals** when possible
 - **Variety** in colors, textures, flavors
-
-**Sample Toddler Daily Menu:**
-```
-Breakfast: Vegetable paratha with curd
-Mid-morning: Seasonal fruit + milk
-Lunch: Rice + dal + sabzi + curd
-Evening: Ragi cookies or roasted chana
-Dinner: Roti + vegetable curry + milk
-
-Traditional Options:
-- Poha with vegetables and peanuts
-- Upma with vegetables
-- Dosa with coconut chutney
-- Kheer made with ragi or rice
-```
 
 #### **Common Challenges and Solutions:**
 
@@ -375,21 +281,6 @@ Traditional Options:
 - **Consistent meal times** help
 - **Quality over quantity** approach
 - **Monitor growth** with pediatrician
-
-**Sample Preschooler Menu:**
-```
-Breakfast: Multigrain dosa with sambar
-Mid-morning: Buttermilk with roasted cumin
-Lunch: Vegetable pulao + raita + papad
-Evening: Homemade trail mix (nuts, seeds, dried fruit)
-Dinner: Roti + dal + green vegetable + milk
-
-Healthy Snack Ideas:
-- Ragi laddu or balls
-- Vegetable cutlets
-- Fruit chaat with chaat masala
-- Homemade namkeen
-```
 
 ### **School Age (6-12 Years)**
 
@@ -572,75 +463,6 @@ Healthy Snack Ideas:
 - **Green leafy vegetables** frequently
 - **Sesame seeds** in various forms
 
-## Meal Planning and Preparation
-
-### **Weekly Menu Planning**
-
-#### **Monday-Sunday Sample Plan for 2-5 Years:**
-
-**Monday:**
-- Breakfast: Ragi pancakes with jaggery
-- Lunch: Vegetable khichdi with ghee
-- Dinner: Roti with dal and spinach sabzi
-
-**Tuesday:**
-- Breakfast: Vegetable upma with coconut
-- Lunch: Rice with sambar and potato curry
-- Dinner: Paratha with curd and pickle
-
-**Wednesday:**
-- Breakfast: Idli with coconut chutney
-- Lunch: Mixed vegetable pulao with raita
-- Dinner: Roti with rajma and rice
-
-**Thursday:**
-- Breakfast: Poha with peanuts and vegetables
-- Lunch: Curd rice with vegetable curry
-- Dinner: Chapati with moong dal and bhindi
-
-**Friday:**
-- Breakfast: Ragi porridge with banana
-- Lunch: Vegetable biryani with boiled egg
-- Dinner: Paratha with aloo gobi
-
-**Saturday:**
-- Breakfast: Dosa with sambar
-- Lunch: Khichdi with mixed vegetables
-- Dinner: Roti with chana dal and carrot sabzi
-
-**Sunday:**
-- Breakfast: Vegetable paratha with curd
-- Lunch: Special meal (child's choice)
-- Dinner: Light khichdi with ghee
-
-### **Batch Cooking Tips**
-
-#### **Weekend Prep:**
-- **Cook grains** in bulk (rice, quinoa, millets)
-- **Prepare dal** in larger quantities
-- **Chop vegetables** for the week
-- **Make ragi powder** or other baby cereals
-
-#### **Freezer-Friendly Options:**
-- **Homemade parathas** - pre-cooked and frozen
-- **Vegetable purees** in ice cube trays
-- **Cooked dal portions** in freezer bags
-- **Homemade baby food** in small containers
-
-### **Food Safety Guidelines**
-
-#### **Preparation Hygiene:**
-- **Wash hands** thoroughly before cooking
-- **Clean utensils** and surfaces
-- **Fresh ingredients** - check expiry dates
-- **Proper storage** of leftovers
-
-#### **Temperature Guidelines:**
-- **Cook thoroughly** - internal temperature 165°F (74°C)
-- **Cool quickly** - refrigerate within 2 hours
-- **Reheat properly** - steaming hot throughout
-- **Discard leftovers** after 2-3 days
-
 ## Special Dietary Considerations
 
 ### **Vegetarian Children**
@@ -663,13 +485,12 @@ Healthy Snack Ideas:
 - **Increase fiber** through fruits, vegetables, whole grains
 - **Adequate water** intake
 - **Physical activity** daily
-- **Probiotic foods** - curd, buttermilk
 - **Avoid** processed and refined foods
 
 #### **Diarrhea**
 - **Continue breastfeeding** for infants
-- **BRAT diet** - Banana, Rice, Apple, Toast
 - **Oral rehydration** solution
+- **Probiotic foods** - curd, buttermilk
 - **Gradual return** to normal diet
 - **Medical attention** if severe or persistent
 

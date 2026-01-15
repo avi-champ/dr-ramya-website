@@ -55,42 +55,15 @@ The common cold is a viral infection of the upper respiratory tract, primarily a
 - **Decreased appetite** - Due to congestion and general discomfort
 - **Irritability** - Especially in infants and toddlers
 
-## Age-Specific Management
+## Special Consideration in Infants
 
-### Infants (0-12 months)
-**Special Considerations:**
 - Monitor for feeding difficulties due to nasal congestion
-- Watch for signs of respiratory distress
+- Watch for fast breathing
 - Maintain hydration through frequent, smaller feeds
-
-**Treatment:**
 - Saline nasal drops (2-3 drops per nostril)
 - Gentle suction with bulb syringe if needed
 - Humidified air (cool mist humidifier)
 - Acetaminophen for fever if over 3 months old (consult pediatrician for dosing)
-
-### Toddlers (1-3 years)
-**Management Focus:**
-- Comfort measures and symptom relief
-- Maintain normal activities as tolerated
-- Monitor for complications
-
-**Treatment Options:**
-- Saline nasal rinses or drops
-- Honey (for children over 1 year) - 1/2 teaspoon for cough
-- Warm fluids for throat comfort
-- Acetaminophen or ibuprofen for fever/discomfort (appropriate dosing)
-
-### School-age Children (3+ years)
-**Approach:**
-- Self-care education
-- Symptom monitoring
-- School attendance guidelines
-
-**Treatment:**
-- Warm salt water gargles for sore throat
-- Adequate rest and hydration
-- Appropriate medications as needed
 
 ## Evidence-Based Treatment
 
@@ -142,26 +115,17 @@ The common cold is a viral infection of the upper respiratory tract, primarily a
 - Helps soothe throat and maintain hydration
 - Chicken soup - provides warmth, hydration, and comfort
 
-**3. Steam Inhalation (>3 years)**
+**3. Steam Inhalation (>6 years)**
 - Supervised steam from hot shower
 - Helps loosen mucus and relieve congestion
 - Ensure safety to prevent burns
 
-**4. Saline Solutions**
-- Homemade: 1/4 teaspoon salt in 1 cup warm water
-- Commercial saline drops or sprays
-- Safe for all ages
-
 ## When to Seek Medical Care
 
-### Immediate Medical Attention
 - **Difficulty breathing** or fast breathing
 - **High fever** - >104°F (40°C) or fever in infants <3 months
-- **Severe headache** or neck stiffness
-- **Persistent vomiting** leading to dehydration
+- **Neck stiffness**
 - **Signs of dehydration** - dry mouth, no tears, decreased urination
-
-### Contact Your Pediatrician
 - **Symptoms lasting >10 days** without improvement
 - **Fever >3 days** in children over 3 months
 - **Ear pain** or drainage from ears
@@ -193,6 +157,12 @@ The common cold is a viral infection of the upper respiratory tract, primarily a
 - Maintain good indoor air quality
 - Ensure proper ventilation
 - Limit crowded spaces during peak cold season
+
+### Appropriate Immunizations as per Guidelines
+- Follow recommended immunization schedule as per IAP guidelines
+- Ensure timely administration of seasonal flu vaccine
+- Keep vaccinations up-to-date for maximum protection
+- Discuss immunization concerns with pediatrician
 
 ## School and Daycare Guidelines
 

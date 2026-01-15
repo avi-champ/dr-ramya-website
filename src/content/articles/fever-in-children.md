@@ -48,7 +48,7 @@ Fever is one of the most common reasons parents seek medical attention for their
 - Poor feeding or refusing to eat
 - Excessive sleepiness or difficulty waking up
 - Unusual irritability or high-pitched crying
-- Difficulty breathing
+- Fast breathing
 
 **For Children (3-6 months):**
 - Fever ≥ 102°F (39°C)
@@ -56,23 +56,12 @@ Fever is one of the most common reasons parents seek medical attention for their
 - Signs of dehydration
 
 **For Any Age:**
-- Fever with difficulty breathing or rapid breathing
+- Watch for signs of respiratory distress (fast breathing)
 - Persistent crying that cannot be consoled
 - Unusual drowsiness or lethargy
 - **Febrile seizures** - convulsions during fever
 - **Severe dehydration** - dry mouth, no tears, reduced urination
-- **Persistent high fever** - >104°F (40°C)
 - Fever lasting more than 5 days
-
-### ⚠️ **Concerning Signs - Contact Your Pediatrician:**
-
-- Fever with rash, especially if it doesn't blanch (turn white) when pressed
-- Severe headache or neck stiffness
-- Persistent vomiting or diarrhea
-- Difficulty swallowing or excessive drooling
-- Unusual drowsiness or irritability
-- Fever in a child with chronic medical conditions
-- Parents' instinct that something is seriously wrong
 
 ## Home Management of Fever
 
@@ -90,7 +79,6 @@ Fever is one of the most common reasons parents seek medical attention for their
 - Ice baths or very cold water (can cause shivering)
 - Bundling in heavy blankets
 - Forcing food if child doesn't want to eat
-- Giving aspirin to children (risk of Reye's syndrome)
 
 ### 2. **Medication Guidelines**
 
@@ -106,11 +94,16 @@ Fever is one of the most common reasons parents seek medical attention for their
 - **Dosage:** 5-10 mg/kg every 6-8 hours
 - **Maximum:** 4 doses in 24 hours (40 mg/kg/day)
 - **Age:** Only for children > 6 months
-- **Contraindications:** Dehydration, kidney problems, asthma
 - **Onset:** 30-60 minutes
 - **Duration:** 6-8 hours
+- **Caution:**
+  1. Ibuprofen is generally avoided under 6 months due to immature kidney function
+  2. Should be avoided or used with caution in: Viral illness like Dengue, Active bleeding, Gastritis, Dehydration, Pre-existing renal disease
 
-> **IAP Recommendation:** Use a single antipyretic medication. Combination therapy or alternating medications is not routinely recommended and may lead to dosing errors.
+> **Note:** 
+> 1. The purpose of fever medicine is not to bring down the temperature to normal level, but to provide symptomatic relief to child by reducing pain and discomfort. If the initial fever was high, say 104°F, administration of paracetamol may bring it down to 101°F and not make the child afebrile.
+> 2. In children who are unable to take orally, your doctor may decide to give paracetamol suppository through rectal route.
+> 3. Paracetamol is the safest medication. Use other medications only on Doctor's prescription.
 
 ### 3. **Hydration Management**
 
@@ -174,6 +167,9 @@ Fever is one of the most common reasons parents seek medical attention for their
 ### ❌ **Myth:** Teething causes high fever
 **✅ Fact:** Teething may cause slight temperature elevation (<101°F/38.3°C) but not high fever.
 
+### ❌ **Myth:** High fever needs antibiotic
+**✅ Fact:** Most common reason for fever is viral infection. Hence not all high fever requires antibiotic.
+
 ## Prevention Strategies
 
 ### **1. Good Hygiene Practices**
@@ -216,31 +212,6 @@ Fever is one of the most common reasons parents seek medical attention for their
 
 ### **Q: Can fever cause febrile seizures?**
 **A:** Febrile seizures occur in 2-5% of children between 6 months and 5 years. They're usually brief and harmless but require medical evaluation.
-
-## When to Call Your Pediatrician
-
-### **Call Immediately (Emergency) if:**
-- Infant under 3 months has any fever
-- Child appears very ill, lethargic, or difficult to arouse
-- Fever >104°F (40°C)
-- Signs of severe dehydration
-- Difficulty breathing or rapid breathing
-- Severe headache or neck stiffness
-- Febrile seizure occurs
-- Rash with fever, especially if it doesn't blanch
-
-### **Call Within 24 Hours if:**
-- Fever >102°F (39°C) in 3-6 month old
-- Fever persists more than 3 days
-- Child has chronic medical conditions
-- Vomiting prevents keeping down fluids
-- You're concerned about your child's condition
-
-### **Call During Office Hours if:**
-- Fever with mild symptoms in older children
-- Questions about medication dosing
-- Need advice on home care
-- Fever pattern seems unusual
 
 ## Key Takeaways
 

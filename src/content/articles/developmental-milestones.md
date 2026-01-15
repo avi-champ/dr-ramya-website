@@ -46,112 +46,136 @@ Developmental milestones are behaviors and skills that most children can do by a
 
 ### Recent Updates to Milestone Guidelines
 
-In 2022, the Centers for Disease Control and Prevention (CDC) and American Academy of Pediatrics (AAP) significantly updated developmental milestone checklists for the first time since 2004. Key changes include:
+In February 2022, the Centers for Disease Control and Prevention (CDC) and American Academy of Pediatrics (AAP) significantly updated developmental milestone checklists for the first time since 2004. These guidelines remain current for 2024-2025. Key changes include:
 
-- **Changed from 50th percentile to 75th percentile** - Milestones now represent what 75% of children can do
-- **Added new age checkpoints** - 15-month and 30-month milestone checklists added
-- **Enhanced social-emotional markers** - Better identification of autism spectrum disorder signs
-- **Clearer language** - Removed vague terms like "may" or "begins"
-- **Age adjustments** - Some milestones moved to later ages (e.g., walking alone from 12 to 15 months)
+- **Changed from 50th percentile to 75th percentile** - Milestones now represent what 75% of children can do, not just the average
+- **Added new age checkpoints** - Now includes 2-month, 4-month, 6-month, 9-month, 15-month, and 30-month checkpoints for better early identification
+- **Enhanced social-emotional markers** - Better identification of autism spectrum disorder signs at earlier ages
+- **Clearer language** - Removed vague terms like "may" or "begins" for more specific developmental expectations
+- **Age adjustments** - Several physical milestones moved to older ages based on 75th percentile data:
+  - Sitting without support moved from 6 months to **9 months**
+  - Walking alone moved from 12 months to **15-18 months**
+  - 50-word vocabulary moved from 24 months to **30 months**
 
 ## Age-by-Age Developmental Milestones
 
-### Birth to 6 Months
+### 2 Months
 
 **Physical Development:**
-- Lifts head when lying on stomach (2-4 months)
-- Rolls from tummy to back (4-6 months)
-- Sits with support (4-6 months)
-- Brings hands to mouth (2-4 months)
+- Holds head up when on tummy
+- Moves both arms and both legs
 
 **Communication:**
-- Makes cooing sounds (2-3 months)
-- Smiles at people (2-3 months)
-- Begins to babble (4-6 months)
-- Responds to own name (4-6 months)
+- Makes sounds other than crying (cooing)
 
 **Social/Emotional:**
-- Smiles on their own to get attention (4 months)
-- Chuckles when tickled (4-6 months)
-- Shows affection for familiar people (4-6 months)
+- Smiles to get your attention
 
-### 6 to 12 Months
+### 4 Months
 
 **Physical Development:**
-- Sits without support (6-8 months)
-- Gets into sitting position (8-10 months)
-- Pulls to standing (8-12 months)
-- Takes first steps alone (12-15 months - updated guideline)
+- Holds head steady without support when you are holding them
+- Holds a toy when you put it in their hand
 
 **Communication:**
-- Babbles with different sounds (6-9 months)
-- Says first words like "mama" or "dada" (10-15 months)
-- Follows simple commands (10-12 months)
-- Points to show interest (9-12 months)
+- Makes sounds like "oooo" and "aahh"
 
-**Social/Emotional:**
-- Shows stranger anxiety (6-12 months)
-- Plays simple games like peek-a-boo (9-12 months)
-- Shows preferences for certain people and toys
-
-### 12 to 24 Months
+### 6 Months
 
 **Physical Development:**
-- Walks alone (12-15 months)
-- Runs (15-18 months)
-- Kicks a ball (18-24 months)
-- Climbs stairs with help (18-24 months)
+- Leans on hands to support self when sitting
 
 **Communication:**
-- Uses 10-25 words (15-18 months)
-- Points to body parts when asked (15-18 months)
-- Follows two-step instructions (18-24 months)
-- Uses 50+ words and two-word phrases (24-30 months - updated guideline)
+- Makes squealing noises
 
 **Social/Emotional:**
-- Shows independence by saying "no" (18-24 months)
-- Copies others, especially adults and older children
-- Gets excited when with other children
-- Shows defiant behavior (18-24 months)
+- Puts things in mouth to explore
 
-### 2 to 3 Years
+### 9 Months
 
 **Physical Development:**
-- Jumps in place (24-30 months)
-- Pedals a tricycle (30-36 months)
-- Uses stairs one foot per step (30-36 months)
+- Sits without support
+- Moves things from one hand to the other
 
 **Communication:**
-- Uses 200+ words (30 months)
-- Speaks in 3-4 word sentences (30-36 months)
-- Asks "what" and "who" questions (24-36 months)
-- Can be understood by strangers most of the time (36 months)
+- Makes squealing noises
 
 **Social/Emotional:**
-- Shows concern when others are hurt
-- Plays alongside other children
-- Shows pride in accomplishments
-- Shows affection for friends
+- Shows facial expressions like happy, sad, angry, and surprised
+- Looks when you call their name
 
-### 3 to 5 Years
+### 12 Months (1 Year)
 
 **Physical Development:**
-- Hops on one foot (3-4 years)
-- Catches a ball (4-5 years)
-- Uses scissors to cut paper (4-5 years)
-- Draws simple shapes (4-5 years)
+- Pulls up to stand
+- Walks, holding on to furniture
 
 **Communication:**
-- Tells stories (3-4 years)
-- Speaks clearly enough for strangers to understand (4 years)
-- Uses complex sentences (4-5 years)
-- Asks many questions (3-5 years)
+- Says "mama" or "dada"
 
 **Social/Emotional:**
-- Shows independence
-- Cooperates with other children
-- Shows creativity and imagination
-- Understands rules and consequences
+- Waves "bye-bye"
+
+### 15 Months
+
+**Physical Development:**
+- Takes a few steps on their own
+- Uses fingers to feed self some food
+
+**Communication:**
+- Says one or two words besides "mama" or "dada"
+
+### 18 Months
+
+**Physical Development:**
+- Walks without holding on to anyone or anything
+- Climbs on and off a couch or chair without help
+
+**Communication:**
+- Says 3 or more words besides "mama" or "dada"
+
+### 24 Months (2 Years)
+
+**Physical Development:**
+- Kicks a ball
+- Runs
+- Walks up a few stairs with or without help
+
+**Communication:**
+- Says at least 2 words together (like "more milk")
+
+### 30 Months (2.5 Years)
+
+**Physical Development:**
+- Jumps off the ground with both feet
+- Twists things (like a doorknob)
+
+**Communication:**
+- Says about 50 words
+
+**Social/Emotional:**
+- Uses things to pretend (like a block is a phone)
+
+### 36 Months (3 Years)
+
+**Physical Development:**
+- Pedals a tricycle
+- Puts on some clothes by themselves (like loose pants)
+
+**Communication:**
+- Asks "who," "what," "where," or "why" questions
+
+**Social/Emotional:**
+- Notices other children and joins them to play
+
+### 4 Years
+
+**Physical Development:**
+- Catches a large ball most of the time
+- Draws a person with 3 or more body parts
+
+**Communication:**
+- Says sentences with 4 or more words
 
 ## Autism Spectrum Disorder: Early Identification
 
@@ -198,68 +222,72 @@ Speech and language development varies significantly among children, but certain
 
 ### Key Speech Milestones by Age
 
-**Birth to 6 months:**
-- Cries differently for different needs
-- Coos and makes pleasure sounds
-- Vocalizes excitement and displeasure
-- Makes gurgling sounds when left alone
+**2 Months:**
+- Makes sounds other than crying
 
-**6 to 12 months:**
-- Babbles with many different sounds
-- Uses voice to express joy and displeasure
-- Responds to simple verbal requests
-- Says "dada" and "mama" with meaning
+**4 Months:**
+- Makes sounds like "oooo" and "aahh" (cooing)
 
-**12 to 18 months:**
-- Says first words (10-25 words)
-- Follows simple directions
-- Points to familiar objects when named
-- Understands simple questions
+**6 Months:**
+- Takes turns making sounds with you
+- Squeals
+- Blows "raspberries" (sticks tongue out and blows)
 
-**18 to 24 months:**
-- Uses 50+ words consistently
-- Starts combining two words ("more milk")
-- Asks simple questions ("What's that?")
-- Follows two-part directions
+**9 Months:**
+- Makes a lot of different sounds like "mamamama" and "babababa" (Babbling)
 
-**2 to 3 years:**
-- Vocabulary expands rapidly (200+ words)
-- Uses 3-4 word sentences
-- Asks many questions
-- Speech is understood by family members
+**12 Months:**
+- Says "mama" or "dada"
+- Waves "bye-bye"
 
-**3 to 4 years:**
-- Uses sentences of 4-5 words
-- Tells simple stories
-- Most speech is understood by strangers
-- Follows complex directions
+**15 Months:**
+- Says 1 or 2 words besides "mama" or "dada"
 
-**4 to 5 years:**
-- Uses adult-like grammar
-- Tells detailed stories
-- Communicates easily with children and adults
-- Uses complex sentences with correct grammar
+**18 Months:**
+- Says 3 or more words besides "mama" or "dada"
+
+**24 Months:**
+- Says at least 2 words together (like "more milk")
+- Points to things in a book when you ask (e.g., "Where is the bear?")
+
+**30 Months:**
+- Says about 50 words
+- Says two or more words with one action word (like "Doggie run")
+- Uses words like "I," "me," or "we"
+
+**36 Months (3 Years):**
+- Carries on a conversation using 2 to 3 sentences
+- Asks "who," "what," "where," or "why" questions
+- Says first name when asked
+
+**4 Years:**
+- Says sentences with 4 or more words
+- Talks about at least one thing that happened during their day
+
+**5 Years:**
+- Tells a story using full sentences
+- Uses future tense ("Grandma will be here")
 
 ### Signs of Speech and Language Delays
 
-**12 months:**
-- Not using gestures (pointing, waving)
-- Not saying any words
+**15 Months:**
+- Not saying any words besides "mama" or "dada"
 
-**18 months:**
-- Less than 10 words
-- Not pointing to body parts
-- No two-word combinations
+**18 Months:**
+- Saying fewer than 3 words besides "mama" or "dada"
 
-**24 months:**
+**24 Months:**
+- Not saying at least 2 words together
+- Speech unclear or not understood by family
+
+**30 Months:**
 - Fewer than 50 words
-- Not combining words into phrases
-- Difficult for family to understand
+- Not combining words into 2-word phrases
 
-**36 months:**
+**36 Months (3 Years):**
 - Speech unclear to strangers
-- Not using 3-word sentences
-- Frequent communication breakdowns
+- Not using 2-3 word sentences
+- Difficulty with back-and-forth conversation
 
 ## When to Seek Professional Help
 
@@ -269,9 +297,11 @@ Speech and language development varies significantly among children, but certain
 - Loses previously acquired skills
 - Shows significant regression in development
 - Has no social smile by 3 months
-- Doesn't babble by 12 months
-- No words by 16 months
+- Doesn't babble by 9 months
+- No words by 15 months
+- Fewer than 3 words by 18 months
 - No meaningful two-word phrases by 24 months
+- Fewer than 50 words by 30 months
 
 ### Additional Concerns Requiring Assessment
 
@@ -300,20 +330,6 @@ Early intervention can dramatically improve outcomes for children with developme
 - Related services (speech, OT, PT)
 - Inclusive preschool programs
 - Individualized Education Programs (IEPs)
-
-### How to Access Services
-
-**For Children Birth to 3:**
-1. Contact your state's early intervention program
-2. Request a free evaluation
-3. No referral needed from a doctor
-4. Services provided in natural environments (home, daycare)
-
-**For Children 3 to 5:**
-1. Contact your local school district
-2. Request evaluation for preschool services
-3. Free evaluation and services if eligible
-4. Transition planning from early intervention
 
 ### Benefits of Early Intervention
 
@@ -395,95 +411,6 @@ Children learning multiple languages may:
 - **18-24 months:** High-quality programming with parent interaction
 - **2-5 years:** No more than 1 hour per day of high-quality content
 - **All ages:** Avoid fast-paced programs and content with violence
-
-### Educational Technology
-
-**Beneficial Use:**
-- Interactive books and storytelling apps
-- Video calls with family members
-- Music and movement programs
-- Age-appropriate educational content
-
-**Concerns:**
-- Replacement of human interaction
-- Passive consumption of content
-- Interference with sleep
-- Reduced physical activity
-
-## Building Partnerships with Healthcare Providers
-
-### Preparing for Well-Child Visits
-
-**Before the Visit:**
-- Complete milestone checklists
-- Write down specific concerns
-- Bring questions about development
-- Document any regression or unusual behaviors
-- Update family medical history
-
-**During the Visit:**
-- Share specific examples of concerns
-- Ask about developmental screening
-- Discuss family history of developmental issues
-- Request resources for developmental support
-- Get referrals if needed
-
-### Advocacy and Communication
-
-**Effective Advocacy:**
-- Trust your parental instincts
-- Be specific about concerns
-- Request evaluations when needed
-- Keep detailed records
-- Seek second opinions if necessary
-
-## Resources for Families
-
-### Crisis Situations
-
-**When to Seek Immediate Help:**
-- Sudden loss of developmental skills
-- Severe behavioral changes
-- Signs of abuse or neglect
-- Medical emergencies
-- Safety concerns
-
-### Support Networks
-
-**Finding Support:**
-- Parent support groups
-- Online communities
-- Local family resource centers
-- Disability advocacy organizations
-- Cultural and linguistic support groups
-
-### Financial Resources
-
-**Potential Assistance:**
-- Early intervention services (free)
-- Medicaid and CHIP programs
-- Supplemental Security Income (SSI)
-- State disability services
-- Private insurance coverage
-- Nonprofit organizations
-
-## Future Planning
-
-### Transition Planning
-
-**Early Intervention to Preschool:**
-- Begin planning at age 2.5
-- Evaluate need for continued services
-- Explore preschool options
-- Develop transition plan
-- Maintain service continuity
-
-**School Readiness:**
-- Assess kindergarten readiness
-- Consider developmental kindergarten
-- Plan for academic supports
-- Address social-emotional needs
-- Prepare for school environment
 
 ## Key Takeaways
 
