@@ -290,22 +290,6 @@ Continue breastfeeding up to 2 years of age or beyond while introducing appropri
 - **1,300mg calcium** daily
 - **10mg iron** daily
 
-#### **School Lunch Box Ideas:**
-
-**Traditional Options:**
-- **Paratha rolls** with vegetables or paneer
-- **Poha** with peanuts and vegetables
-- **Idli-sambar** in thermos containers
-- **Ragi cookies** with milk
-- **Mixed vegetable upma**
-- **Paneer or dal parathas**
-
-**Nutritious Add-ons:**
-- **Fresh fruit pieces** daily
-- **Nuts** (if school allows)
-- **Homemade drink** instead of packaged juice
-- **Seasonal vegetables** in preparations
-
 ### **Adolescents (13-18 Years)**
 
 #### **Nutritional Needs:**
