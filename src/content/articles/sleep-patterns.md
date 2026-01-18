@@ -231,7 +231,7 @@ Research shows bedtime routines promote not only healthy sleep but also broad de
 
 **For Toddlers & Preschoolers:**
 - Banana with small amount of nut/seed butter
-- Cheese stick with whole grain crackers
+- Whole grain crackers
 - Small bowl of berries
 - Plain yogurt with fruit
 - Half a whole grain muffin
