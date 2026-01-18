@@ -422,7 +422,7 @@ Research shows bedtime routines promote not only healthy sleep but also broad de
 **A:** Tailor routine duration to individual child needs and family context. Working parents may need abbreviated routines. Generally, 20-45 minutes depending on child's age.
 
 ### **Q: What if my child says they're hungry at bedtime?**
-**A:** Offer the same simple, healthy option consistently (like banana or cheese stick) to determine if hunger is genuine or stalling behavior.
+**A:** Offer the same simple, healthy option consistently (like banana) to determine if hunger is genuine or stalling behavior.
 
 ## Key Takeaways
 
